@@ -39,7 +39,7 @@ public class DjView extends BorderPane {
 		
 		this.setCenter(buttons_1);
 		
-		
+		// fuck my life
 	}
 
 }
