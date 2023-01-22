@@ -38,6 +38,13 @@ public class DjView extends BorderPane {
 		//this.getChildren().addAll(buttons_1, buttons_2);
 		
 		this.setCenter(buttons_1);
+		
+		// this is a test
+		
+		Button button_3_1 = new Button(); 
+		Button button_4_2 = new Button();
+		Button button_4_3 = new Button();
+		Button button_4_4 = new Button();
 	}
 
 }
