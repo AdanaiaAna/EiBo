@@ -8,7 +8,7 @@ import javafx.scene.layout.VBox;
 public class DjView extends BorderPane {
 	
 	public DjView() {
-		
+		//hi
 		Label label = new Label("Mein Label");
 		
 		VBox buttons_1 = new VBox();
