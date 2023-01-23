@@ -84,7 +84,7 @@ public class DjView extends BorderPane {
 		this.setCenter(overall);
 		
 		// --------------------------------------------------------------
-		buttons_1.getChildren().addAll(button_2_1, button_2_2 , button_2_3, button_2_4);
+		
 		
 		
 		VBox buttons_3 = new VBox();
