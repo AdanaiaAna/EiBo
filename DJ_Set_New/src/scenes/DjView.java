@@ -8,6 +8,8 @@ import javafx.scene.layout.VBox;
 
 public class DjView extends BorderPane {
 	
+	Button button_1_1;
+	
 	public DjView() {
 		
 		HBox overall = new HBox();
@@ -22,7 +24,7 @@ public class DjView extends BorderPane {
 		
 		buttons_1.getChildren().addAll(hbox_buttons_1_1,hbox_buttons_1_2, hbox_extra_buttons_1);
 		
-		Button button_1_1 = new Button("Drums 1"); 
+		button_1_1 = new Button("Drums 1"); 
 		Button button_1_2 = new Button("Drums 2");
 		Button button_1_3 = new Button("Drums 3");
 		Button button_1_4 = new Button("Drums 4");
