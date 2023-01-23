@@ -9,6 +9,18 @@
     -fx-border-width: 5;
 }
 
+#buttons_2 {
+	-fx-color: red;
+    -fx-padding: 15;
+    -fx-spacing: 10;
+    
+    -fx-border-style: solid inside;
+    -fx-border-color: red;
+    
+    -fx-border-width: 5;
+}
+
+
 .buttons {
 	
 }
