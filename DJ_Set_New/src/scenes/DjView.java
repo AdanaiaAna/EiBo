@@ -3,6 +3,7 @@ package scenes;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
@@ -14,7 +15,12 @@ public class DjView extends BorderPane {
 	Button button_1_2;
 	Button button_1_3;
 	Button button_1_4;
+	ToggleButton record_start;
+	Label time;
 	
+	/**
+	 * 
+	 */
 	public DjView() {
 		
 		HBox overall = new HBox();
@@ -123,7 +129,11 @@ public class DjView extends BorderPane {
 				
 				VBox buttons_4 = new VBox();
 				
-				Button record_start = new Button("⏹"); 
+				record_start = new ToggleButton("⏹"); 
+				time = new Label("00:00");
+				time.setVisible(false);
+				time.setId("time-label");
+				time.setManaged(false);
 				Button button_4_1 = new Button("1");
 				Button button_4_2 = new Button("2");
 				Button button_4_3 = new Button("3");
@@ -132,7 +142,7 @@ public class DjView extends BorderPane {
 				
 				this.setRight(buttons_4);
 				
-				buttons_4.getChildren().addAll(record_start, button_4_1, button_4_2, button_4_3, button_4_4);
+				buttons_4.getChildren().addAll(record_start, time, button_4_1, button_4_2, button_4_3, button_4_4);
 				
 				buttons_4.setId("buttons_4");
 				record_start.setId("record_btn");		

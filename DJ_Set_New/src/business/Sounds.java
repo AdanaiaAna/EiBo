@@ -11,19 +11,23 @@ import ddf.minim.Minim;
 import ddf.minim.ugens.FilePlayer;
 import de.hsrm.mi.eibo.simpleplayer.SimpleAudioPlayer;
 import de.hsrm.mi.eibo.simpleplayer.SimpleMinim;
+import javafx.beans.property.SimpleIntegerProperty;
 
 public class Sounds {
 	
 	private SimpleMinim minim;
 	private List<SimpleAudioPlayer> soundlist = new LinkedList<SimpleAudioPlayer>();
-	AudioInput in;
-	AudioRecorder record;
-	AudioOutput out;
-	FilePlayer player;
+	private int recordingnumber = 1;
+	private AudioInput in;
+	private AudioRecorder record;
+	private AudioOutput out;
+	private SimpleIntegerProperty time;
+	private Thread playTime;
 	
 
 	public Sounds() {
 		minim = new SimpleMinim(true);
+		time = new SimpleIntegerProperty();
 		initialize();
 	}
 
@@ -52,17 +56,36 @@ public class Sounds {
 	}
 	
 	public void record() {
-		Date timestemp=new Date();
 		in = minim.getLineIn(Minim.STEREO, 2048);
 		out = minim.getLineOut( Minim.STEREO );
-		record = minim.createRecorder(in, "MySong" + timestemp  + ".wav");
+		record = minim.createRecorder(in, "MySong" +  recordingnumber + ".wav");
 		record.beginRecord(); 
+		
+		playTime = new Thread() {
+			public void run() {
+				int i = 0;
+				while (!isInterrupted()) {
+						time.set(i);
+						try {
+							Thread.sleep(1000);
+						} catch (InterruptedException e) {
+							interrupt();
+						}
+						i++;
+					}
+				}
+			};
+		playTime.start();
 	}
 	public void endRecording() {
 		record.endRecord();
+		playTime.interrupt();
 		in.close();
 		out.close();
-		record.save();
+		//record.save();
+	}
+	public SimpleIntegerProperty getTimeProperty() {
+		return time;
 	}
 	
 	

@@ -1,9 +1,14 @@
 package scenes;
 
 import business.Sounds;
+import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ToggleButton;
 
 public class DjViewController extends ViewController {
 
@@ -11,12 +16,13 @@ public class DjViewController extends ViewController {
 	private Button button_1_2;
 	private Button button_1_3;
 	private Button button_1_4;
+	private ToggleButton record_start;
+	private Label time;
 	private Sounds sound;
 	private final int DRUM1 = 0;
 	private final int DRUM2 = 1;
 	private final int DRUM3 = 2;
 	private final int DRUM4 = 3;
-	
 
 	public DjViewController() {
 		sound = new Sounds();
@@ -27,6 +33,8 @@ public class DjViewController extends ViewController {
 		button_1_2 = view.button_1_2;
 		button_1_3 = view.button_1_3;
 		button_1_4 = view.button_1_4;
+		record_start = view.record_start;
+		time = view.time;
 
 		initialize();
 	}
@@ -61,7 +69,44 @@ public class DjViewController extends ViewController {
 				sound.endLoop(DRUM4);
 			}
 		});
+		record_start.setOnAction(event -> {
+			if (record_start.isSelected()) {
+				sound.record();
+				time.setVisible(true);
+				time.setManaged(true);
+				
+			} else {
+				sound.endRecording();
+				time.setVisible(false);
+				time.setManaged(false);
+			}
+		});
+		sound.getTimeProperty().addListener(new ChangeListener<Number>() {
 
+			// updated die aktuelle Position des Timebar und das Timelabel
+			@Override
+			public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+				Platform.runLater(new Runnable() {
+					public void run() {
+						// aktuelle Zeit in das Format mm:ss umwandeln
+						String timecode = "";
+						int currTime = newValue.intValue();
+						int minutes = currTime / 60;
+						int seconds = currTime % 60;
+						if (minutes < 10) {
+							timecode += "0" + Integer.toString(minutes);
+						}
+						timecode += ":";
+						if (seconds < 10) {
+							timecode += "0" + Integer.toString(seconds);
+						} else {
+							timecode += Integer.toString(seconds);
+						}
+						time.setText(timecode);
+					}
+				});
+			}
+		});
 	}
 
 	@Override
