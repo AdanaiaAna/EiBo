@@ -2,8 +2,10 @@ package scenes;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Slider;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 
 public class DjView extends BorderPane {
@@ -82,19 +84,77 @@ public class DjView extends BorderPane {
 		buttons_2.setId("buttons_2");
 		
 		
+		// ---------------------- 3. Spalte ------------------------------
+		
+				VBox buttons_3 = new VBox();
+				
+				HBox hbox_buttons_3_1 = new HBox();
+				HBox hbox_buttons_3_2 = new HBox();
+				
+				Button button_3_1 = new Button("Bass 1"); 
+				Button button_3_2 = new Button("Bass 2");
+				Button button_3_3 = new Button("Bass 3");
+				Button button_3_4 = new Button("Bass 4");
+				
+				hbox_buttons_3_1.getChildren().addAll(button_3_1, button_3_2);
+				hbox_buttons_3_2.getChildren().addAll(button_3_3, button_3_4);
+				
+				/*button_3_1.getStyleClass().add("round_button");
+				button_3_2.getStyleClass().add("round_button");
+				button_3_3.getStyleClass().add("round_button");
+				button_3_4.getStyleClass().add("round_button"); */
+				
+				button_3_1.setId("button_3_round");
+				button_3_2.setId("button_3_round");
+				button_3_3.setId("button_3_round");
+				button_3_4.setId("button_3_round");
+				
+				Button stop = new Button("Stop");
+				stop.setId("stop_btn");
+				
+				Slider slider = new Slider(0, 1, 0.5);
+				
+				buttons_3.getChildren().addAll(hbox_buttons_3_1, hbox_buttons_3_2, stop, slider);
+				
+				buttons_3.setId("buttons_3");
+		
+				
+		// ------------------------ 4. Spalte --------------------------------
+				
+				VBox buttons_4 = new VBox();
+				
+				Button record_start = new Button("⏹"); 
+				Button button_4_1 = new Button("1");
+				Button button_4_2 = new Button("2");
+				Button button_4_3 = new Button("3");
+				Button button_4_4 = new Button("4");
+				
+				
+				this.setRight(buttons_4);
+				
+				buttons_4.getChildren().addAll(record_start, button_4_1, button_4_2, button_4_3, button_4_4);
+				
+				buttons_4.setId("buttons_4");
+				record_start.setId("record_btn");		
+				
 		// --------------------------------------------------------------
 		
 		
-		overall.getChildren().addAll(buttons_1, buttons_2);
+		overall.getChildren().addAll(buttons_1, buttons_2,buttons_3,buttons_4);
 		this.setCenter(overall);
 		
+		HBox.setHgrow(buttons_1, Priority.ALWAYS);
+		HBox.setHgrow(buttons_2, Priority.ALWAYS);
+		HBox.setHgrow(buttons_3, Priority.ALWAYS);
+		HBox.setHgrow(buttons_4, Priority.ALWAYS);
+		
 		// --------------------------------------------------------------
 		
 		
 		
-		VBox buttons_3 = new VBox();
 		
-		VBox buttons_4 = new VBox();
+		
+		
 		
 		
 		//this.getChildren().addAll(buttons_1, hbox_buttons_1);

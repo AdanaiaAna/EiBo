@@ -1,26 +1,92 @@
-#buttons_1 {
-	-fx-color: blue;
+#background {
+     -fx-background-color: black;
+     -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #434343, #1a1a1a);
+     -fx-border-color: linear-gradient(from 25% 25% to 100% 100%, #EB75C5, #01225B);
+    -fx-border-width: 30px;
+ }
+ 
+ #buttons_1 {
+    -fx-color: blue;
     -fx-padding: 15;
     -fx-spacing: 10;
-    
+
     -fx-border-style: solid inside;
     -fx-border-color: blue;
-    
+
     -fx-border-width: 5;
 }
 
 #buttons_2 {
-	-fx-color: red;
+    -fx-color: red;
     -fx-padding: 15;
     -fx-spacing: 10;
-    
+
     -fx-border-style: solid inside;
     -fx-border-color: red;
-    
+
     -fx-border-width: 5;
 }
 
+#buttons_3 {
+    -fx-color: yellow;
+    -fx-padding: 15;
+    -fx-spacing: 10;
 
-.buttons {
-	
+    -fx-border-style: solid inside;
+    -fx-border-color: yellow;
+
+    -fx-border-width: 5;
 }
+
+#stop_btn {
+    -fx-background-color: red;
+    -fx-text-fill: black;
+    -fx-border-color:black;
+}
+
+.slider .track {
+    -fx-background-color: black;
+    -fx-background-radius: 0;
+}
+
+.slider .thumb {
+    -fx-pref-height: 50px;
+    -fx-pref-width: 15px;
+    -fx-background-color: #252525;
+    -fx-background-radius: 0;
+    -fx-border-color: black;
+    -fx-border-width: 5px;
+}
+
+#buttons_4 {
+    -fx-color: orange;
+    -fx-padding: 15;
+    -fx-spacing: 10;
+
+    -fx-border-style: solid inside;
+    -fx-border-color: black;
+
+    -fx-border-width: 5;
+}
+
+#record_btn {
+    -fx-background-radius: 5em;
+    -fx-background-color: red;
+    -fx-border-radius: 5em;
+    -fx-border-color: black;
+}
+
+#button_2_round {
+    -fx-min-height: 63px;
+    -fx-background-radius: 5em;
+}
+
+#button_3_round {
+    -fx-min-height: 50px;
+    -fx-background-radius: 5em;
+}
+
+
+#buttons_1, #buttons_2, #buttons_3, #buttons_4 {
+     -fx-border-color: black;
+ }
