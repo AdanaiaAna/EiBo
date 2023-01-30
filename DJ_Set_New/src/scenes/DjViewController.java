@@ -57,6 +57,7 @@ public class DjViewController extends ViewController {
 				sound.endLoop(DRUM1, sound.getDrumLoops());
 			}
 		});
+		
 		button_1_2.setOnAction(event -> {
 			if (!sound.getAudioPlayerIsPlaying(DRUM2, sound.getDrumLoops())) {
 				sound.playLoop(DRUM2, sound.getDrumLoops());
@@ -64,6 +65,7 @@ public class DjViewController extends ViewController {
 				sound.endLoop(DRUM2, sound.getDrumLoops());
 			}
 		});
+		
 		button_1_3.setOnAction(event -> {
 			if (!sound.getAudioPlayerIsPlaying(DRUM3, sound.getDrumLoops())) {
 				sound.playLoop(DRUM3, sound.getDrumLoops());
@@ -71,6 +73,7 @@ public class DjViewController extends ViewController {
 				sound.endLoop(DRUM3, sound.getDrumLoops());
 			}
 		});
+		
 		button_1_4.setOnAction(event -> {
 			if (!sound.getAudioPlayerIsPlaying(DRUM4, sound.getDrumLoops())) {
 				sound.playLoop(DRUM4, sound.getDrumLoops());
@@ -78,9 +81,11 @@ public class DjViewController extends ViewController {
 				sound.endLoop(DRUM4, sound.getDrumLoops());
 			}
 		});
+		
 		button_4_1.setOnAction(event -> {
 			sound.playOneShot(OS1);
 		});
+		
 		record_start.setOnAction(event -> {
 			if (record_start.isSelected()) {
 				sound.record();
