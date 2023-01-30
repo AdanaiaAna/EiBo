@@ -29,7 +29,7 @@ public class Sounds {
 	
 	
 	
-	private List<SimpleAudioPlayer> soundlistLoops = new LinkedList<SimpleAudioPlayer>();
+	//private List<SimpleAudioPlayer> soundlistLoops = new LinkedList<SimpleAudioPlayer>();
 	
 
 	
@@ -60,13 +60,20 @@ public class Sounds {
 		
 	}
 
-	public void playLoop(int sound) {
+	public void playLoop(int sound, List<SimpleAudioPlayer> soundlistLoops) {
+		for (SimpleAudioPlayer player : soundlistLoops) {
+			if (player.isPlaying()) {
+				player.pause();
+				player.rewind();
+				break;
+			}
+		}
 		if (sound < soundlistLoops.size() && sound >= 0) {
 			soundlistLoops.get(sound).loop();
 		}
 	}
 
-	public void endLoop(int sound) {
+	public void endLoop(int sound, List<SimpleAudioPlayer> soundlistLoops) {
 		if (sound < soundlistLoops.size() && sound >= 0) {
 			soundlistLoops.get(sound).pause();
 			soundlistLoops.get(sound).rewind();
@@ -80,7 +87,7 @@ public class Sounds {
 		}
 	}
 
-	public boolean getAudioPlayerIsPlaying(int sound) {
+	public boolean getAudioPlayerIsPlaying(int sound, List<SimpleAudioPlayer> soundlistLoops) {
 		return soundlistLoops.get(sound).isPlaying();
 	}
 	
@@ -122,6 +129,9 @@ public class Sounds {
 		return time;
 	}
 	
+	public List<SimpleAudioPlayer> getDrumLoops(){
+		return DrumLoops;
+	}
 	
 
 }

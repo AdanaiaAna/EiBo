@@ -51,31 +51,31 @@ public class DjViewController extends ViewController {
 	@Override
 	public void initialize() {
 		button_1_1.setOnAction(event -> {
-			if (!sound.getAudioPlayerIsPlaying(DRUM1)) {
-				sound.playLoop(DRUM1);
+			if (!sound.getAudioPlayerIsPlaying(DRUM1, sound.getDrumLoops())) {
+				sound.playLoop(DRUM1, sound.getDrumLoops());
 			} else {
-				sound.endLoop(DRUM1);
+				sound.endLoop(DRUM1, sound.getDrumLoops());
 			}
 		});
 		button_1_2.setOnAction(event -> {
-			if (!sound.getAudioPlayerIsPlaying(DRUM2)) {
-				sound.playLoop(DRUM2);
+			if (!sound.getAudioPlayerIsPlaying(DRUM2, sound.getDrumLoops())) {
+				sound.playLoop(DRUM2, sound.getDrumLoops());
 			} else {
-				sound.endLoop(DRUM2);
+				sound.endLoop(DRUM2, sound.getDrumLoops());
 			}
 		});
 		button_1_3.setOnAction(event -> {
-			if (!sound.getAudioPlayerIsPlaying(DRUM3)) {
-				sound.playLoop(DRUM3);
+			if (!sound.getAudioPlayerIsPlaying(DRUM3, sound.getDrumLoops())) {
+				sound.playLoop(DRUM3, sound.getDrumLoops());
 			} else {
-				sound.endLoop(DRUM3);
+				sound.endLoop(DRUM3, sound.getDrumLoops());
 			}
 		});
 		button_1_4.setOnAction(event -> {
-			if (!sound.getAudioPlayerIsPlaying(DRUM4)) {
-				sound.playLoop(DRUM4);
+			if (!sound.getAudioPlayerIsPlaying(DRUM4, sound.getDrumLoops())) {
+				sound.playLoop(DRUM4, sound.getDrumLoops());
 			} else {
-				sound.endLoop(DRUM4);
+				sound.endLoop(DRUM4, sound.getDrumLoops());
 			}
 		});
 		button_4_1.setOnAction(event -> {
