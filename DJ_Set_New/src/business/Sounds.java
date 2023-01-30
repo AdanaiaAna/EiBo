@@ -16,13 +16,12 @@ public class Sounds {
 	private SimpleMinim minim;
 	//Normale Sounds
 	private List<SimpleAudioPlayer> drumLoops = new LinkedList<SimpleAudioPlayer>();
-	private List<SimpleAudioPlayer> guitarLoops = new LinkedList<SimpleAudioPlayer>();
+	private List<SimpleAudioPlayer> guitar1Loops = new LinkedList<SimpleAudioPlayer>();
+	private List<SimpleAudioPlayer> guitar2Loops = new LinkedList<SimpleAudioPlayer>();
 	private List<SimpleAudioPlayer> bassLoops = new LinkedList<SimpleAudioPlayer>();
 	
-	//Extras
+	//Extra
 	private List<SimpleAudioPlayer> extraDrumLoops = new LinkedList<SimpleAudioPlayer>();
-	private List<SimpleAudioPlayer> extraGuitarLoops = new LinkedList<SimpleAudioPlayer>();
-	private List<SimpleAudioPlayer> extraBassLoops = new LinkedList<SimpleAudioPlayer>();
 	
 	//Oneshots 
 	private List<SimpleAudioPlayer> soundlistOS = new LinkedList<SimpleAudioPlayer>();
@@ -48,15 +47,37 @@ public class Sounds {
 	}
 
 	public void initialize() {
+		
+		//Drums
 		drumLoops.add(minim.loadMP3File("Sounds/drum1.mp3"));
 		drumLoops.add(minim.loadMP3File("Sounds/drums2.mp3"));
 		drumLoops.add(minim.loadMP3File("Sounds/drums3.mp3"));
 		drumLoops.add(minim.loadMP3File("Sounds/drums4.mp3"));
 		
 		
+		// Extra Drum (nicht fettig) ----
+		extraDrumLoops.add(minim.loadMP3File("Sounds/guitar2_4.mp3"));
+		extraDrumLoops.add(minim.loadMP3File("Sounds/guitar2_4.mp3"));
+	
+		
+		// Gitarren
+		guitar1Loops.add(minim.loadMP3File("Sounds/guitar1_1.mp3"));
+		guitar1Loops.add(minim.loadMP3File("Sounds/guitar1_2.mp3"));
+		guitar1Loops.add(minim.loadMP3File("Sounds/guitar1_3.mp3"));
+		guitar1Loops.add(minim.loadMP3File("Sounds/guitar1_4.mp3"));
+		
+		guitar2Loops.add(minim.loadMP3File("Sounds/guitar2_1.mp3"));
+		guitar2Loops.add(minim.loadMP3File("Sounds/guitar2_2.mp3"));
+		guitar2Loops.add(minim.loadMP3File("Sounds/guitar2_3.mp3"));
+		guitar2Loops.add(minim.loadMP3File("Sounds/guitar2_4.mp3"));
 		
 		
-		soundlistOS.add(minim.loadMP3File("Sounds/becken oder so.mp3"));
+		//Bass-Gitarren (nicht fertig)
+		bassLoops.add(minim.loadMP3File("Sounds/guitar1_1.mp3"));
+		bassLoops.add(minim.loadMP3File("Sounds/guitar1_1.mp3"));
+		bassLoops.add(minim.loadMP3File("Sounds/guitar1_1.mp3"));
+		bassLoops.add(minim.loadMP3File("Sounds/guitar1_1.mp3"));
+		
 		
 	}
 

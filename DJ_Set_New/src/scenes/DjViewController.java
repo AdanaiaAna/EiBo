@@ -11,19 +11,46 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
 
 public class DjViewController extends ViewController {
-
-	private Button button_1_1;
-	private Button button_1_2;
-	private Button button_1_3;
-	private Button button_1_4;
 	
+	// Drums
+	private Button drum_1;
+	private Button drum_2;
+	private Button drum_3;
+	private Button drum_4;
+	
+	private Button drum_extra_1;
+	private Button drum_extra_2;
+	
+	//Gitarre 1
+	private Button guitar_1_1;
+	private Button guitar_1_2;
+	private Button guitar_1_3;
+	private Button guitar_1_4;
+	
+	// Gitarre 2
+	private Button guitar_2_1;
+	private Button guitar_2_2;
+	private Button guitar_2_3;
+	private Button guitar_2_4;
+	
+	//Bass_Gitarre
+	private Button bass_1;
+	private Button bass_2;
+	private Button bass_3;
+	private Button bass_4;
+	
+	// Recording 
 	private ToggleButton record_start;
 	private Label time;
-	Button button_4_1;
-	Button button_4_2;
-	Button button_4_3;
-	Button button_4_4;
 	
+	// OneShots
+	private Button oneShot_1;
+	private Button oneShot_2;
+	private Button oneShot_3;
+	private Button oneShot_4;
+	
+	
+
 	private Sounds sound;
 	private final int DRUM1 = 0;
 	private final int DRUM2 = 1;
@@ -37,20 +64,25 @@ public class DjViewController extends ViewController {
 		currentView = new DjView();
 		DjView view = (DjView) currentView;
 
-		button_1_1 = view.button_1_1;
-		button_1_2 = view.button_1_2;
-		button_1_3 = view.button_1_3;
-		button_1_4 = view.button_1_4;
+		drum_1 = view.drum_1;
+		drum_2 = view.drum_2;
+		drum_3 = view.drum_3;
+		drum_4 = view.drum_4;
+		
+		drum_extra_1 = view.drum_extra_1;
+		drum_extra_2 = view.drum_extra_2;
+		
+		
 		record_start = view.record_start;
 		time = view.time;
-		button_4_1 = view.button_4_1;
+		oneShot_1 = view.oneShot_1;
 
 		initialize();
 	}
 
 	@Override
 	public void initialize() {
-		button_1_1.setOnAction(event -> {
+		drum_1.setOnAction(event -> {
 			if (!sound.getAudioPlayerIsPlaying(DRUM1, sound.getDrumLoops())) {
 				sound.playLoop(DRUM1, sound.getDrumLoops());
 			} else {
@@ -58,7 +90,7 @@ public class DjViewController extends ViewController {
 			}
 		});
 		
-		button_1_2.setOnAction(event -> {
+		drum_2.setOnAction(event -> {
 			if (!sound.getAudioPlayerIsPlaying(DRUM2, sound.getDrumLoops())) {
 				sound.playLoop(DRUM2, sound.getDrumLoops());
 			} else {
@@ -66,7 +98,7 @@ public class DjViewController extends ViewController {
 			}
 		});
 		
-		button_1_3.setOnAction(event -> {
+		drum_3.setOnAction(event -> {
 			if (!sound.getAudioPlayerIsPlaying(DRUM3, sound.getDrumLoops())) {
 				sound.playLoop(DRUM3, sound.getDrumLoops());
 			} else {
@@ -74,7 +106,7 @@ public class DjViewController extends ViewController {
 			}
 		});
 		
-		button_1_4.setOnAction(event -> {
+		drum_4.setOnAction(event -> {
 			if (!sound.getAudioPlayerIsPlaying(DRUM4, sound.getDrumLoops())) {
 				sound.playLoop(DRUM4, sound.getDrumLoops());
 			} else {
@@ -82,7 +114,7 @@ public class DjViewController extends ViewController {
 			}
 		});
 		
-		button_4_1.setOnAction(event -> {
+		oneShot_1.setOnAction(event -> {
 			sound.playOneShot(OS1);
 		});
 		
