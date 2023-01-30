@@ -50,7 +50,6 @@ public class DjViewController extends ViewController {
 	private Button oneShot_4;
 	
 	
-
 	private Sounds sound;
 	private final int DRUM1 = 0;
 	private final int DRUM2 = 1;
@@ -71,6 +70,27 @@ public class DjViewController extends ViewController {
 		
 		drum_extra_1 = view.drum_extra_1;
 		drum_extra_2 = view.drum_extra_2;
+		
+		guitar_1_1 = view.guitar_1_1;
+		guitar_1_2 = view.guitar_1_2;
+		guitar_1_3 = view.guitar_1_3;
+		guitar_1_4 = view.guitar_1_4;
+		
+		guitar_2_1 = view.guitar_2_1;
+		guitar_2_2 = view.guitar_2_2;
+		guitar_2_3 = view.guitar_2_3;
+		guitar_2_4 = view.guitar_2_4;
+		
+		bass_1 = view.bass_1;
+		bass_2 = view.bass_2;
+		bass_3 = view.bass_3;
+		bass_4 = view.bass_4;
+		
+		oneShot_1 = view.oneShot_1;
+		oneShot_2 = view.oneShot_2;
+		oneShot_3 = view.oneShot_3;
+		oneShot_4 = view.oneShot_4;
+		
 		
 		
 		record_start = view.record_start;
