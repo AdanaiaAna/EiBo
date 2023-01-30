@@ -93,9 +93,9 @@ public class Sounds {
 	
 	
 	public void record() {
-		in = minim.getLineIn(Minim.STEREO, 2048);
+		//in = minim.getLineIn(Minim.STEREO, 2048);
 		out = minim.getLineOut( Minim.STEREO );
-		record = minim.createRecorder(in, "MySong" +  recordingnumber + ".wav");
+		record = minim.createRecorder(out, "MySong" +  recordingnumber + ".wav");
 		record.beginRecord(); 
 		
 		playTime = new Thread() {
@@ -120,10 +120,10 @@ public class Sounds {
 	public void endRecording() {
 		record.endRecord();
 		playTime.interrupt();
-		in.close();
+		//in.close();
 		out.close();
 		//habs auskommentiert sonst recorded es jedes mal haha
-		//record.save();
+		record.save();
 	}
 	public SimpleIntegerProperty getTimeProperty() {
 		return time;
