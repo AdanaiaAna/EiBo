@@ -59,7 +59,7 @@ public class DjViewController extends ViewController {
 	private final int GUITAR1 = 0;
 	private final int GUITAR2 = 1;
 	private final int GUITAR3 = 2;
-	private final int GUITAR4 = 4;
+	private final int GUITAR4 = 3;
 	
 	private final int OS1 = 0;
 
