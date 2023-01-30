@@ -1,6 +1,5 @@
 package business;
 
-import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -8,61 +7,95 @@ import ddf.minim.AudioInput;
 import ddf.minim.AudioOutput;
 import ddf.minim.AudioRecorder;
 import ddf.minim.Minim;
-import ddf.minim.ugens.FilePlayer;
 import de.hsrm.mi.eibo.simpleplayer.SimpleAudioPlayer;
 import de.hsrm.mi.eibo.simpleplayer.SimpleMinim;
+import javafx.beans.property.SimpleIntegerProperty;
 
 public class Sounds {
 	
 	private SimpleMinim minim;
-	private List<SimpleAudioPlayer> soundlist = new LinkedList<SimpleAudioPlayer>();
-	AudioInput in;
-	AudioRecorder record;
-	AudioOutput out;
-	FilePlayer player;
+	private List<SimpleAudioPlayer> soundlistLoops = new LinkedList<SimpleAudioPlayer>();
+	private List<SimpleAudioPlayer> soundlistOS = new LinkedList<SimpleAudioPlayer>();
+	private int recordingnumber = 1;
+	private AudioInput in;
+	private AudioRecorder record;
+	private AudioOutput out;
+	private SimpleIntegerProperty time;
+	private Thread playTime;
 	
 
 	public Sounds() {
 		minim = new SimpleMinim(true);
+		time = new SimpleIntegerProperty();
 		initialize();
 	}
 
 	public void initialize() {
-		soundlist.add(minim.loadMP3File("Sounds/drum1.mp3"));
-		soundlist.add(minim.loadMP3File("Sounds/drums2.mp3"));
-		soundlist.add(minim.loadMP3File("Sounds/drums3.mp3"));
-		soundlist.add(minim.loadMP3File("Sounds/drums4.mp3"));
+		soundlistLoops.add(minim.loadMP3File("Sounds/drum1.mp3"));
+		soundlistLoops.add(minim.loadMP3File("Sounds/drums2.mp3"));
+		soundlistLoops.add(minim.loadMP3File("Sounds/drums3.mp3"));
+		soundlistLoops.add(minim.loadMP3File("Sounds/drums4.mp3"));
+		
+		soundlistOS.add(minim.loadMP3File("Sounds/becken oder so.mp3"));
+		
 	}
 
 	public void playLoop(int sound) {
-		if (sound < soundlist.size() && sound >= 0) {
-			soundlist.get(sound).loop();
+		if (sound < soundlistLoops.size() && sound >= 0) {
+			soundlistLoops.get(sound).loop();
 		}
 	}
 
 	public void endLoop(int sound) {
-		if (sound < soundlist.size() && sound >= 0) {
-			soundlist.get(sound).pause();
-			soundlist.get(sound).rewind();
+		if (sound < soundlistLoops.size() && sound >= 0) {
+			soundlistLoops.get(sound).pause();
+			soundlistLoops.get(sound).rewind();
+		}
+	}
+	
+	public void playOneShot(int sound) {
+		if (sound < soundlistOS.size() && sound >= 0) {
+			soundlistOS.get(sound).rewind();
+			soundlistOS.get(sound).play();
 		}
 	}
 
 	public boolean getAudioPlayerIsPlaying(int sound) {
-		return soundlist.get(sound).isPlaying();
+		return soundlistLoops.get(sound).isPlaying();
 	}
 	
 	public void record() {
-		Date timestemp=new Date();
 		in = minim.getLineIn(Minim.STEREO, 2048);
 		out = minim.getLineOut( Minim.STEREO );
-		record = minim.createRecorder(in, "MySong" + timestemp  + ".wav");
+		record = minim.createRecorder(in, "MySong" +  recordingnumber + ".wav");
 		record.beginRecord(); 
+		
+		playTime = new Thread() {
+			public void run() {
+				int i = 0;
+				while (!isInterrupted()) {
+						time.set(i);
+						try {
+							Thread.sleep(1000);
+						} catch (InterruptedException e) {
+							interrupt();
+						}
+						i++;
+					}
+				}
+			};
+		playTime.start();
 	}
 	public void endRecording() {
 		record.endRecord();
+		playTime.interrupt();
 		in.close();
 		out.close();
-		record.save();
+		//habs auskommentiert sonst recorded es jedes mal haha
+		//record.save();
+	}
+	public SimpleIntegerProperty getTimeProperty() {
+		return time;
 	}
 	
 	

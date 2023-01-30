@@ -3,6 +3,7 @@ package scenes;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
@@ -14,7 +15,16 @@ public class DjView extends BorderPane {
 	Button button_1_2;
 	Button button_1_3;
 	Button button_1_4;
+	ToggleButton record_start;
+	Button button_4_1;
+	Button button_4_2;
+	Button button_4_3;
+	Button button_4_4;
+	Label time;
 	
+	/**
+	 * 
+	 */
 	public DjView() {
 		
 		HBox overall = new HBox();
@@ -86,56 +96,60 @@ public class DjView extends BorderPane {
 		
 		// ---------------------- 3. Spalte ------------------------------
 		
-				VBox buttons_3 = new VBox();
+		VBox buttons_3 = new VBox();
 				
-				HBox hbox_buttons_3_1 = new HBox();
-				HBox hbox_buttons_3_2 = new HBox();
+		HBox hbox_buttons_3_1 = new HBox();
+		HBox hbox_buttons_3_2 = new HBox();
 				
-				Button button_3_1 = new Button("Bass 1"); 
-				Button button_3_2 = new Button("Bass 2");
-				Button button_3_3 = new Button("Bass 3");
-				Button button_3_4 = new Button("Bass 4");
+		Button button_3_1 = new Button("Bass 1"); 
+		Button button_3_2 = new Button("Bass 2");
+		Button button_3_3 = new Button("Bass 3");
+		Button button_3_4 = new Button("Bass 4");
 				
-				hbox_buttons_3_1.getChildren().addAll(button_3_1, button_3_2);
-				hbox_buttons_3_2.getChildren().addAll(button_3_3, button_3_4);
+		hbox_buttons_3_1.getChildren().addAll(button_3_1, button_3_2);
+		hbox_buttons_3_2.getChildren().addAll(button_3_3, button_3_4);
 				
 				/*button_3_1.getStyleClass().add("round_button");
 				button_3_2.getStyleClass().add("round_button");
 				button_3_3.getStyleClass().add("round_button");
 				button_3_4.getStyleClass().add("round_button"); */
 				
-				button_3_1.setId("button_3_round");
-				button_3_2.setId("button_3_round");
-				button_3_3.setId("button_3_round");
-				button_3_4.setId("button_3_round");
+		button_3_1.setId("button_3_round");
+		button_3_2.setId("button_3_round");
+		button_3_3.setId("button_3_round");
+		button_3_4.setId("button_3_round");
 				
-				Button stop = new Button("Stop");
-				stop.setId("stop_btn");
+		Button stop = new Button("Stop");
+		stop.setId("stop_btn");
 				
-				Slider slider = new Slider(0, 1, 0.5);
+		Slider slider = new Slider(0, 1, 0.5);
 				
-				buttons_3.getChildren().addAll(hbox_buttons_3_1, hbox_buttons_3_2, stop, slider);
+		buttons_3.getChildren().addAll(hbox_buttons_3_1, hbox_buttons_3_2, stop, slider);
 				
-				buttons_3.setId("buttons_3");
+		buttons_3.setId("buttons_3");
 		
 				
 		// ------------------------ 4. Spalte --------------------------------
 				
-				VBox buttons_4 = new VBox();
+		VBox buttons_4 = new VBox();
 				
-				Button record_start = new Button("⏹"); 
-				Button button_4_1 = new Button("1");
-				Button button_4_2 = new Button("2");
-				Button button_4_3 = new Button("3");
-				Button button_4_4 = new Button("4");
+		record_start = new ToggleButton("⏹"); 
+		time = new Label("00:00");
+		time.setVisible(false);
+		time.setId("time-label");
+		time.setManaged(false);
+		button_4_1 = new Button("1");
+		button_4_2 = new Button("2");
+		button_4_3 = new Button("3");
+		button_4_4 = new Button("4");
 				
 				
-				this.setRight(buttons_4);
+		this.setRight(buttons_4);
 				
-				buttons_4.getChildren().addAll(record_start, button_4_1, button_4_2, button_4_3, button_4_4);
+		buttons_4.getChildren().addAll(record_start, time, button_4_1, button_4_2, button_4_3, button_4_4);
 				
-				buttons_4.setId("buttons_4");
-				record_start.setId("record_btn");		
+		buttons_4.setId("buttons_4");
+		record_start.setId("record_btn");		
 				
 		// --------------------------------------------------------------
 		
