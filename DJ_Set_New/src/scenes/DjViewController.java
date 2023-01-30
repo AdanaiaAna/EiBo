@@ -16,13 +16,21 @@ public class DjViewController extends ViewController {
 	private Button button_1_2;
 	private Button button_1_3;
 	private Button button_1_4;
+	
 	private ToggleButton record_start;
 	private Label time;
+	Button button_4_1;
+	Button button_4_2;
+	Button button_4_3;
+	Button button_4_4;
+	
 	private Sounds sound;
 	private final int DRUM1 = 0;
 	private final int DRUM2 = 1;
 	private final int DRUM3 = 2;
 	private final int DRUM4 = 3;
+	
+	private final int OS1 = 0;
 
 	public DjViewController() {
 		sound = new Sounds();
@@ -35,6 +43,7 @@ public class DjViewController extends ViewController {
 		button_1_4 = view.button_1_4;
 		record_start = view.record_start;
 		time = view.time;
+		button_4_1 = view.button_4_1;
 
 		initialize();
 	}
@@ -68,6 +77,9 @@ public class DjViewController extends ViewController {
 			} else {
 				sound.endLoop(DRUM4);
 			}
+		});
+		button_4_1.setOnAction(event -> {
+			sound.playOneShot(OS1);
 		});
 		record_start.setOnAction(event -> {
 			if (record_start.isSelected()) {
