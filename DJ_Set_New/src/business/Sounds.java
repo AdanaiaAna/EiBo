@@ -15,14 +15,14 @@ public class Sounds {
 	
 	private SimpleMinim minim;
 	//Normale Sounds
-	private List<SimpleAudioPlayer> DrumLoops = new LinkedList<SimpleAudioPlayer>();
-	private List<SimpleAudioPlayer> GuitarLoops = new LinkedList<SimpleAudioPlayer>();
-	private List<SimpleAudioPlayer> BassLoops = new LinkedList<SimpleAudioPlayer>();
+	private List<SimpleAudioPlayer> drumLoops = new LinkedList<SimpleAudioPlayer>();
+	private List<SimpleAudioPlayer> guitarLoops = new LinkedList<SimpleAudioPlayer>();
+	private List<SimpleAudioPlayer> bassLoops = new LinkedList<SimpleAudioPlayer>();
 	
 	//Extras
-	private List<SimpleAudioPlayer> ExtraDrumLoops = new LinkedList<SimpleAudioPlayer>();
-	private List<SimpleAudioPlayer> ExtraGuitarLoops = new LinkedList<SimpleAudioPlayer>();
-	private List<SimpleAudioPlayer> ExtraBassLoops = new LinkedList<SimpleAudioPlayer>();
+	private List<SimpleAudioPlayer> extraDrumLoops = new LinkedList<SimpleAudioPlayer>();
+	private List<SimpleAudioPlayer> extraGuitarLoops = new LinkedList<SimpleAudioPlayer>();
+	private List<SimpleAudioPlayer> extraBassLoops = new LinkedList<SimpleAudioPlayer>();
 	
 	//Oneshots 
 	private List<SimpleAudioPlayer> soundlistOS = new LinkedList<SimpleAudioPlayer>();
@@ -48,10 +48,10 @@ public class Sounds {
 	}
 
 	public void initialize() {
-		DrumLoops.add(minim.loadMP3File("Sounds/drum1.mp3"));
-		DrumLoops.add(minim.loadMP3File("Sounds/drums2.mp3"));
-		DrumLoops.add(minim.loadMP3File("Sounds/drums3.mp3"));
-		DrumLoops.add(minim.loadMP3File("Sounds/drums4.mp3"));
+		drumLoops.add(minim.loadMP3File("Sounds/drum1.mp3"));
+		drumLoops.add(minim.loadMP3File("Sounds/drums2.mp3"));
+		drumLoops.add(minim.loadMP3File("Sounds/drums3.mp3"));
+		drumLoops.add(minim.loadMP3File("Sounds/drums4.mp3"));
 		
 		
 		
@@ -61,10 +61,10 @@ public class Sounds {
 	}
 
 	public void playLoop(int sound, List<SimpleAudioPlayer> soundlistLoops) {
-		for (SimpleAudioPlayer player : soundlistLoops) {
-			if (player.isPlaying()) {
-				player.pause();
-				player.rewind();
+		for (SimpleAudioPlayer currentAudio : soundlistLoops) {
+			if (currentAudio.isPlaying()) {
+				currentAudio.pause();
+				currentAudio.rewind();
 				break;
 			}
 		}
@@ -130,7 +130,7 @@ public class Sounds {
 	}
 	
 	public List<SimpleAudioPlayer> getDrumLoops(){
-		return DrumLoops;
+		return drumLoops;
 	}
 	
 
