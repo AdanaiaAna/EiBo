@@ -153,10 +153,6 @@ public class DjView extends BorderPane {
 		
 		
 		
-		
-		
-		
-		
 		//this.getChildren().addAll(buttons_1, hbox_buttons_1);
 		
 		
