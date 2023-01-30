@@ -14,8 +14,25 @@ import javafx.beans.property.SimpleIntegerProperty;
 public class Sounds {
 	
 	private SimpleMinim minim;
-	private List<SimpleAudioPlayer> soundlistLoops = new LinkedList<SimpleAudioPlayer>();
+	//Normale Sounds
+	private List<SimpleAudioPlayer> DrumLoops = new LinkedList<SimpleAudioPlayer>();
+	private List<SimpleAudioPlayer> GuitarLoops = new LinkedList<SimpleAudioPlayer>();
+	private List<SimpleAudioPlayer> BassLoops = new LinkedList<SimpleAudioPlayer>();
+	
+	//Extras
+	private List<SimpleAudioPlayer> ExtraDrumLoops = new LinkedList<SimpleAudioPlayer>();
+	private List<SimpleAudioPlayer> ExtraGuitarLoops = new LinkedList<SimpleAudioPlayer>();
+	private List<SimpleAudioPlayer> ExtraBassLoops = new LinkedList<SimpleAudioPlayer>();
+	
+	//Oneshots 
 	private List<SimpleAudioPlayer> soundlistOS = new LinkedList<SimpleAudioPlayer>();
+	
+	
+	
+	private List<SimpleAudioPlayer> soundlistLoops = new LinkedList<SimpleAudioPlayer>();
+	
+
+	
 	private int recordingnumber = 1;
 	private AudioInput in;
 	private AudioRecorder record;
@@ -31,10 +48,13 @@ public class Sounds {
 	}
 
 	public void initialize() {
-		soundlistLoops.add(minim.loadMP3File("Sounds/drum1.mp3"));
-		soundlistLoops.add(minim.loadMP3File("Sounds/drums2.mp3"));
-		soundlistLoops.add(minim.loadMP3File("Sounds/drums3.mp3"));
-		soundlistLoops.add(minim.loadMP3File("Sounds/drums4.mp3"));
+		DrumLoops.add(minim.loadMP3File("Sounds/drum1.mp3"));
+		DrumLoops.add(minim.loadMP3File("Sounds/drums2.mp3"));
+		DrumLoops.add(minim.loadMP3File("Sounds/drums3.mp3"));
+		DrumLoops.add(minim.loadMP3File("Sounds/drums4.mp3"));
+		
+		
+		
 		
 		soundlistOS.add(minim.loadMP3File("Sounds/becken oder so.mp3"));
 		
@@ -64,6 +84,7 @@ public class Sounds {
 		return soundlistLoops.get(sound).isPlaying();
 	}
 	
+	
 	public void record() {
 		in = minim.getLineIn(Minim.STEREO, 2048);
 		out = minim.getLineOut( Minim.STEREO );
@@ -85,7 +106,10 @@ public class Sounds {
 				}
 			};
 		playTime.start();
+		recordingnumber ++;
 	}
+	
+	
 	public void endRecording() {
 		record.endRecord();
 		playTime.interrupt();
