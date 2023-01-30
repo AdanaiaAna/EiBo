@@ -56,6 +56,11 @@ public class DjViewController extends ViewController {
 	private final int DRUM3 = 2;
 	private final int DRUM4 = 3;
 	
+	private final int GUITAR1 = 0;
+	private final int GUITAR2 = 1;
+	private final int GUITAR3 = 2;
+	private final int GUITAR4 = 4;
+	
 	private final int OS1 = 0;
 
 	public DjViewController() {
@@ -92,7 +97,6 @@ public class DjViewController extends ViewController {
 		oneShot_4 = view.oneShot_4;
 		
 		
-		
 		record_start = view.record_start;
 		time = view.time;
 		oneShot_1 = view.oneShot_1;
@@ -102,6 +106,9 @@ public class DjViewController extends ViewController {
 
 	@Override
 	public void initialize() {
+		
+		
+		// -------Drum Event Handlers--------
 		drum_1.setOnAction(event -> {
 			if (!sound.getAudioPlayerIsPlaying(DRUM1, sound.getDrumLoops())) {
 				sound.playLoop(DRUM1, sound.getDrumLoops());
@@ -133,6 +140,42 @@ public class DjViewController extends ViewController {
 				sound.endLoop(DRUM4, sound.getDrumLoops());
 			}
 		});
+		
+		
+		// -------Gitarren EventHandler--------
+		guitar_1_1.setOnAction(event -> {
+			if (!sound.getAudioPlayerIsPlaying(GUITAR1, sound.getGuitar1Loops())) {
+				sound.playLoop(GUITAR1, sound.getGuitar1Loops());
+			} else {
+				sound.endLoop(GUITAR1, sound.getGuitar1Loops());
+			}
+		});
+		
+		guitar_1_2.setOnAction(event -> {
+			if (!sound.getAudioPlayerIsPlaying(GUITAR2, sound.getGuitar1Loops())) {
+				sound.playLoop(GUITAR2, sound.getGuitar1Loops());
+			} else {
+				sound.endLoop(GUITAR2, sound.getGuitar1Loops());
+			}
+		});
+		
+		guitar_1_3.setOnAction(event -> {
+			if (!sound.getAudioPlayerIsPlaying(GUITAR3, sound.getGuitar1Loops())) {
+				sound.playLoop(GUITAR3, sound.getGuitar1Loops());
+			} else {
+				sound.endLoop(GUITAR3, sound.getGuitar1Loops());
+			}
+		});
+		
+		guitar_1_4.setOnAction(event -> {
+			if (!sound.getAudioPlayerIsPlaying(GUITAR4, sound.getGuitar1Loops())) {
+				sound.playLoop(GUITAR4, sound.getGuitar1Loops());
+			} else {
+				sound.endLoop(GUITAR4, sound.getGuitar1Loops());
+			}
+		});
+		
+		
 		
 		oneShot_1.setOnAction(event -> {
 			sound.playOneShot(OS1);
@@ -176,7 +219,8 @@ public class DjViewController extends ViewController {
 				});
 			}
 		});
-	}
+		
+	}// End of initialize
 
 	@Override
 	public Button getButton() {

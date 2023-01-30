@@ -154,5 +154,7 @@ public class Sounds {
 		return drumLoops;
 	}
 	
-
+	public List<SimpleAudioPlayer> getGuitar1Loops(){
+		return guitar1Loops;
+	}
 }
