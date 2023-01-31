@@ -1,3 +1,9 @@
+#playButton {
+	-fx-min-height: 60px;
+	-fx-min-width: 100px;
+	-fx-color: pink;
+}
+
 
 #background {
      -fx-background-color: black;

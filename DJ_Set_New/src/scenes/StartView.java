@@ -11,12 +11,17 @@ public class StartView extends BorderPane {
 		
 		play = new Button("Play");
 		
-		this.getChildren().addAll(play);
+		play.setId("playButton");
 		
-		
+		this.setCenter(play);
 		
 	}
 		
+	public Button getPlayButton() {
+		return play;
+	}
+	
+	
 	
 	
 }

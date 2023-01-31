@@ -12,6 +12,7 @@ import scenes.StartView;
 import scenes.ViewController;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 
@@ -19,16 +20,20 @@ import javafx.scene.layout.Pane;
 public class Main extends Application {
 	
 	 Stage primaryStage;
-	 Pane startview; 
+	 Pane startView; 
 	 Pane DjView;
 	 ViewController controller;
+	 
+	 Button play;
 	
 	@Override
 	public void start(Stage primaryStage) {
 		
 		controller = new DjViewController();
-		this.DjView = new DjView();
-		startview = new StartView();
+		DjView = new DjView();
+		startView = new StartView();
+		
+		
 		
 		
 		try {
@@ -52,7 +57,8 @@ public class Main extends Application {
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			
-			scene.setRoot(controller.getView());
+			//scene.setRoot(controller.getView());
+			scene.setRoot(startView);
 			
 			primaryStage.show();
 			
