@@ -68,12 +68,13 @@ public class DjView extends BorderPane {
 		
 		row_1.getChildren().addAll(hbox_drums_1,hbox_drums_2, hbox_drums_extra);
 		
+		//1. Button Reihe
 		drum_1 = new Button(); 
 		drum_1.setId("Drum1");
-		
-		
 		drum_2 = new Button();
 		drum_2.setId("Drum1");
+		
+		//2.
 		drum_3 = new Button("Drum 3");
 		drum_4 = new Button("Drum 4");
 		
