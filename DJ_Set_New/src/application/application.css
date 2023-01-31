@@ -14,7 +14,6 @@
 
 
 #background {
-	
      -fx-background-color: black;
      -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #434343, #1a1a1a);
      -fx-border-color: linear-gradient(from 25% 25% to 100% 100%, #EB75C5, #01225B);

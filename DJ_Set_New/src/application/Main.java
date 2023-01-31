@@ -14,6 +14,7 @@ import scenes.ViewController;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 
@@ -57,6 +58,13 @@ public class Main extends Application {
 			scene = new Scene(root,1200,800);
 			
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			
+			// Icon von der App
+			Image icon = new Image("/images/dj_icon.png");
+			primaryStage.getIcons().add(icon);
+			primaryStage.setTitle("DJ Set");
+			 
+			 
 			primaryStage.setScene(scene);
 			
 			//scene.setRoot(controller.getView());
