@@ -1,3 +1,11 @@
+.button, .toggle-button {
+	-fx-min-height: 100;
+	-fx-min-width: 100;
+	-fx-text-fill: #b21933;
+	-fx-background-repeat: no-repeat no-repeat;
+    -fx-background-position: center;
+}
+
 #playButton {
 	-fx-min-height: 60px;
 	-fx-min-width: 100px;
@@ -6,28 +14,30 @@
 
 
 #background {
+	-fx-background-size: 1200px 800px;
+	-fx-background-image: url("/images/Background.png");	
      -fx-background-color: black;
      -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #434343, #1a1a1a);
      -fx-border-color: linear-gradient(from 25% 25% to 100% 100%, #EB75C5, #01225B);
     -fx-border-width: 30px;
  }
  
+  #Drum-Buttons {
+    -fx-padding: 25;
+    -fx-spacing: 20;
+    -fx-alignment: center;
+}
+ 
  #buttons_1 {
-    -fx-color: blue;
     -fx-padding: 15;
     -fx-spacing: 10;
-
-    -fx-border-style: solid inside;
-    -fx-border-color: blue;
-
-    -fx-border-width: 5;
 }
 
-#testRat {
-	-fx-min-height: 250px;
-	-fx-min-width: 250px;
-	-fx-background-image:url('/DJ_Set_New/rsz_button.png');
-	-fx-background-size: 200px 200px;
+#Drum1 {
+	-fx-background-color: transparent;
+	-fx-background-image:url("/images/Background.png");
+	-fx-background-size: 100px 100px;
+	
 	
 }
 

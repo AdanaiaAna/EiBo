@@ -55,22 +55,25 @@ public class DjView extends BorderPane {
 	public DjView() {
 		
 		HBox overall = new HBox();
+		overall.setId("background");
 		
 		// -----------------1. Spalte --------------------------
 		
 		VBox row_1 = new VBox();
 		
 		HBox hbox_drums_1 = new HBox();
+		hbox_drums_1.setId("Drum-Buttons");
 		HBox hbox_drums_2 = new HBox();
 		HBox hbox_drums_extra = new HBox();
 		
 		row_1.getChildren().addAll(hbox_drums_1,hbox_drums_2, hbox_drums_extra);
 		
-		drum_1 = new Button("Drum 1"); 
-		drum_1.setId("testRat");
+		drum_1 = new Button(); 
+		drum_1.setId("Drum1");
 		
 		
-		drum_2 = new Button("Drum 2");
+		drum_2 = new Button();
+		drum_2.setId("Drum1");
 		drum_3 = new Button("Drum 3");
 		drum_4 = new Button("Drum 4");
 		
