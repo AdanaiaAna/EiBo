@@ -4,8 +4,6 @@ import business.Sounds;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
@@ -175,7 +173,37 @@ public class DjViewController extends ViewController {
 			}
 		});
 		
+		guitar_2_1.setOnAction(event -> {
+			if (!sound.getAudioPlayerIsPlaying(GUITAR1, sound.getGuitar1Loops())) {
+				sound.playLoop(GUITAR1, sound.getGuitar1Loops());
+			} else {
+				sound.endLoop(GUITAR1, sound.getGuitar1Loops());
+			}
+		});
 		
+		guitar_2_2.setOnAction(event -> {
+			if (!sound.getAudioPlayerIsPlaying(GUITAR2, sound.getGuitar2Loops())) {
+				sound.playLoop(GUITAR2, sound.getGuitar2Loops());
+			} else {
+				sound.endLoop(GUITAR2, sound.getGuitar2Loops());
+			}
+		});
+		
+		guitar_2_3.setOnAction(event -> {
+			if (!sound.getAudioPlayerIsPlaying(GUITAR3, sound.getGuitar2Loops())) {
+				sound.playLoop(GUITAR3, sound.getGuitar2Loops());
+			} else {
+				sound.endLoop(GUITAR3, sound.getGuitar2Loops());
+			}
+		});
+		
+		guitar_2_4.setOnAction(event -> {
+			if (!sound.getAudioPlayerIsPlaying(GUITAR4, sound.getGuitar2Loops())) {
+				sound.playLoop(GUITAR4, sound.getGuitar2Loops());
+			} else {
+				sound.endLoop(GUITAR4, sound.getGuitar2Loops());
+			}
+		});
 		
 		oneShot_1.setOnAction(event -> {
 			sound.playOneShot(OS1);

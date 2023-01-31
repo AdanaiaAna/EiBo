@@ -100,7 +100,12 @@ public class Sounds {
 			soundlistLoops.get(sound).rewind();
 		}
 	}
-	
+	// falls auch 2 extra sounds parallel laufen können auch parallel laufen können sonst einfach wie immer die methode
+	public void playExtraDrumLoop(int sound) {
+		if (sound < extraDrumLoops.size() && sound >= 0) {
+			extraDrumLoops.get(sound).loop();
+		}
+	}
 	public void playOneShot(int sound) {
 		if (sound < soundlistOS.size() && sound >= 0) {
 			soundlistOS.get(sound).rewind();
@@ -114,9 +119,9 @@ public class Sounds {
 	
 	
 	public void record() {
-		//in = minim.getLineIn(Minim.STEREO, 2048);
+		in = minim.getLineIn(Minim.STEREO, 2048);
 		out = minim.getLineOut( Minim.STEREO );
-		record = minim.createRecorder(out, "MySong" +  recordingnumber + ".wav");
+		record = minim.createRecorder(in, "MySong" +  recordingnumber + ".wav");
 		record.beginRecord(); 
 		
 		playTime = new Thread() {
@@ -141,7 +146,7 @@ public class Sounds {
 	public void endRecording() {
 		record.endRecord();
 		playTime.interrupt();
-		//in.close();
+		in.close();
 		out.close();
 		//habs auskommentiert sonst recorded es jedes mal haha
 		record.save();
@@ -156,5 +161,8 @@ public class Sounds {
 	
 	public List<SimpleAudioPlayer> getGuitar1Loops(){
 		return guitar1Loops;
+	}
+	public List<SimpleAudioPlayer> getGuitar2Loops(){
+		return guitar2Loops;
 	}
 }
