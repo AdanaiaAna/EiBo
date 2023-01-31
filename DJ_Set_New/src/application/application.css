@@ -14,8 +14,7 @@
 
 
 #background {
-	-fx-background-size: 1200px 800px;
-	-fx-background-image: url("/images/Background.png");	
+	
      -fx-background-color: black;
      -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #434343, #1a1a1a);
      -fx-border-color: linear-gradient(from 25% 25% to 100% 100%, #EB75C5, #01225B);
@@ -37,9 +36,8 @@
 	-fx-background-color: transparent;
 	-fx-background-image:url("/images/Background.png");
 	-fx-background-size: 100px 100px;
-	
-	
 }
+
 
 #buttons_2 {
     -fx-color: red;
