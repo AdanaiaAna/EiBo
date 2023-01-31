@@ -1,5 +1,6 @@
 package scenes;
 
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -54,8 +55,8 @@ public class DjView extends BorderPane {
 	 * 
 	 */
 	public DjView() {
-		
-		HBox overall = new HBox();
+		VBox overall = new VBox();
+		HBox soundButtons = new HBox();
 		overall.setId("background");
 		
 		// -----------------1. Spalte --------------------------
@@ -156,7 +157,7 @@ public class DjView extends BorderPane {
 				
 		Slider slider = new Slider(0, 1, 0.5);
 				
-		row_3.getChildren().addAll(hbox_bass_1, hbox_bass_2, stop, slider);
+		row_3.getChildren().addAll(hbox_bass_1, hbox_bass_2);
 				
 		row_3.setId("buttons_3");
 		
@@ -184,16 +185,22 @@ public class DjView extends BorderPane {
 				
 		this.setRight(row_4);
 				
-		row_4.getChildren().addAll(record_start, time, oneShot_1, oneShot_2, oneShot_3, oneShot_4);
+		row_4.getChildren().addAll( oneShot_1, oneShot_2, oneShot_3, oneShot_4);
 				
 		row_4.setId("buttons_4");
 		row_4.setAlignment(Pos.TOP_CENTER);
 		record_start.setId("record_btn");		
 				
 		// --------------------------------------------------------------
+		HBox bottomRow = new HBox();
+		bottomRow.setId("Bottom");
+		bottomRow.getChildren().addAll(slider, stop, record_start, time);
+		bottomRow.setAlignment(Pos.BOTTOM_CENTER);
+		bottomRow.setPadding(new Insets(30, 10, 10, 30));
+		bottomRow.setSpacing(200);
 		
-		
-		overall.getChildren().addAll(row_1, row_2,row_3,row_4);
+		soundButtons.getChildren().addAll(row_1, row_2,row_3,row_4);
+		overall.getChildren().addAll(soundButtons, bottomRow);
 		this.setCenter(overall);
 		
 		HBox.setHgrow(row_1, Priority.ALWAYS);
