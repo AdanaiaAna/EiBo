@@ -199,6 +199,7 @@ public class DjViewController extends ViewController {
 			}
 		});
 		
+		
 		// --------OneShots----------
 		oneShot_1.setOnAction(event -> {
 			sound.playOneShot(TRACK1);
