@@ -24,7 +24,7 @@ public class Sounds {
 	private List<SimpleAudioPlayer> extraDrumLoops = new LinkedList<SimpleAudioPlayer>();
 	
 	//Oneshots 
-	private List<SimpleAudioPlayer> soundlistOS = new LinkedList<SimpleAudioPlayer>();
+	private List<SimpleAudioPlayer> osLoops = new LinkedList<SimpleAudioPlayer>();
 	
 	
 	
@@ -79,6 +79,13 @@ public class Sounds {
 		bassLoops.add(minim.loadMP3File("Sounds/guitar1_1.mp3"));
 		
 		
+		// Oneshots
+		osLoops.add(minim.loadMP3File("Sounds/OneShot1.mp3"));
+		osLoops.add(minim.loadMP3File("Sounds/OneShot2.mp3"));
+		osLoops.add(minim.loadMP3File("Sounds/OneShot3.mp3"));
+		osLoops.add(minim.loadMP3File("Sounds/OneShot4.mp3"));
+		
+		
 	}
 
 	public void playLoop(int sound, List<SimpleAudioPlayer> soundlistLoops) {
@@ -107,9 +114,9 @@ public class Sounds {
 		}
 	}
 	public void playOneShot(int sound) {
-		if (sound < soundlistOS.size() && sound >= 0) {
-			soundlistOS.get(sound).rewind();
-			soundlistOS.get(sound).play();
+		if (sound < osLoops.size() && sound >= 0) {
+			osLoops.get(sound).rewind();
+			osLoops.get(sound).play();
 		}
 	}
 

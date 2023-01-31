@@ -49,17 +49,11 @@ public class DjViewController extends ViewController {
 	
 	
 	private Sounds sound;
-	private final int DRUM1 = 0;
-	private final int DRUM2 = 1;
-	private final int DRUM3 = 2;
-	private final int DRUM4 = 3;
+	private final int TRACK1 = 0;
+	private final int TRACK2 = 1;
+	private final int TRACK3 = 2;
+	private final int TRACK4 = 3;
 	
-	private final int GUITAR1 = 0;
-	private final int GUITAR2 = 1;
-	private final int GUITAR3 = 2;
-	private final int GUITAR4 = 3;
-	
-	private final int OS1 = 0;
 
 	public DjViewController() {
 		sound = new Sounds();
@@ -108,106 +102,121 @@ public class DjViewController extends ViewController {
 		
 		// -------Drum Event Handlers--------
 		drum_1.setOnAction(event -> {
-			if (!sound.getAudioPlayerIsPlaying(DRUM1, sound.getDrumLoops())) {
-				sound.playLoop(DRUM1, sound.getDrumLoops());
+			if (!sound.getAudioPlayerIsPlaying(TRACK1, sound.getDrumLoops())) {
+				sound.playLoop(TRACK1, sound.getDrumLoops());
 			} else {
-				sound.endLoop(DRUM1, sound.getDrumLoops());
+				sound.endLoop(TRACK1, sound.getDrumLoops());
 			}
 		});
 		
 		drum_2.setOnAction(event -> {
-			if (!sound.getAudioPlayerIsPlaying(DRUM2, sound.getDrumLoops())) {
-				sound.playLoop(DRUM2, sound.getDrumLoops());
+			if (!sound.getAudioPlayerIsPlaying(TRACK2, sound.getDrumLoops())) {
+				sound.playLoop(TRACK2, sound.getDrumLoops());
 			} else {
-				sound.endLoop(DRUM2, sound.getDrumLoops());
+				sound.endLoop(TRACK2, sound.getDrumLoops());
 			}
 		});
 		
 		drum_3.setOnAction(event -> {
-			if (!sound.getAudioPlayerIsPlaying(DRUM3, sound.getDrumLoops())) {
-				sound.playLoop(DRUM3, sound.getDrumLoops());
+			if (!sound.getAudioPlayerIsPlaying(TRACK3, sound.getDrumLoops())) {
+				sound.playLoop(TRACK3, sound.getDrumLoops());
 			} else {
-				sound.endLoop(DRUM3, sound.getDrumLoops());
+				sound.endLoop(TRACK3, sound.getDrumLoops());
 			}
 		});
 		
 		drum_4.setOnAction(event -> {
-			if (!sound.getAudioPlayerIsPlaying(DRUM4, sound.getDrumLoops())) {
-				sound.playLoop(DRUM4, sound.getDrumLoops());
+			if (!sound.getAudioPlayerIsPlaying(TRACK4, sound.getDrumLoops())) {
+				sound.playLoop(TRACK4, sound.getDrumLoops());
 			} else {
-				sound.endLoop(DRUM4, sound.getDrumLoops());
+				sound.endLoop(TRACK4, sound.getDrumLoops());
 			}
 		});
 		
 		
 		// -------Gitarren EventHandler--------
 		guitar_1_1.setOnAction(event -> {
-			if (!sound.getAudioPlayerIsPlaying(GUITAR1, sound.getGuitar1Loops())) {
-				sound.playLoop(GUITAR1, sound.getGuitar1Loops());
+			if (!sound.getAudioPlayerIsPlaying(TRACK1, sound.getGuitar1Loops())) {
+				sound.playLoop(TRACK1, sound.getGuitar1Loops());
 			} else {
-				sound.endLoop(GUITAR1, sound.getGuitar1Loops());
+				sound.endLoop(TRACK1, sound.getGuitar1Loops());
 			}
 		});
 		
 		guitar_1_2.setOnAction(event -> {
-			if (!sound.getAudioPlayerIsPlaying(GUITAR2, sound.getGuitar1Loops())) {
-				sound.playLoop(GUITAR2, sound.getGuitar1Loops());
+			if (!sound.getAudioPlayerIsPlaying(TRACK2, sound.getGuitar1Loops())) {
+				sound.playLoop(TRACK2, sound.getGuitar1Loops());
 			} else {
-				sound.endLoop(GUITAR2, sound.getGuitar1Loops());
+				sound.endLoop(TRACK2, sound.getGuitar1Loops());
 			}
 		});
 		
 		guitar_1_3.setOnAction(event -> {
-			if (!sound.getAudioPlayerIsPlaying(GUITAR3, sound.getGuitar1Loops())) {
-				sound.playLoop(GUITAR3, sound.getGuitar1Loops());
+			if (!sound.getAudioPlayerIsPlaying(TRACK3, sound.getGuitar1Loops())) {
+				sound.playLoop(TRACK3, sound.getGuitar1Loops());
 			} else {
-				sound.endLoop(GUITAR3, sound.getGuitar1Loops());
+				sound.endLoop(TRACK3, sound.getGuitar1Loops());
 			}
 		});
 		
 		guitar_1_4.setOnAction(event -> {
-			if (!sound.getAudioPlayerIsPlaying(GUITAR4, sound.getGuitar1Loops())) {
-				sound.playLoop(GUITAR4, sound.getGuitar1Loops());
+			if (!sound.getAudioPlayerIsPlaying(TRACK4, sound.getGuitar1Loops())) {
+				sound.playLoop(TRACK4, sound.getGuitar1Loops());
 			} else {
-				sound.endLoop(GUITAR4, sound.getGuitar1Loops());
+				sound.endLoop(TRACK4, sound.getGuitar1Loops());
 			}
 		});
 		
 		guitar_2_1.setOnAction(event -> {
-			if (!sound.getAudioPlayerIsPlaying(GUITAR1, sound.getGuitar1Loops())) {
-				sound.playLoop(GUITAR1, sound.getGuitar1Loops());
+			if (!sound.getAudioPlayerIsPlaying(TRACK1, sound.getGuitar2Loops())) {
+				sound.playLoop(TRACK1, sound.getGuitar2Loops());
 			} else {
-				sound.endLoop(GUITAR1, sound.getGuitar1Loops());
+				sound.endLoop(TRACK1, sound.getGuitar2Loops());
 			}
 		});
 		
 		guitar_2_2.setOnAction(event -> {
-			if (!sound.getAudioPlayerIsPlaying(GUITAR2, sound.getGuitar2Loops())) {
-				sound.playLoop(GUITAR2, sound.getGuitar2Loops());
+			if (!sound.getAudioPlayerIsPlaying(TRACK2, sound.getGuitar2Loops())) {
+				sound.playLoop(TRACK2, sound.getGuitar2Loops());
 			} else {
-				sound.endLoop(GUITAR2, sound.getGuitar2Loops());
+				sound.endLoop(TRACK2, sound.getGuitar2Loops());
 			}
 		});
 		
 		guitar_2_3.setOnAction(event -> {
-			if (!sound.getAudioPlayerIsPlaying(GUITAR3, sound.getGuitar2Loops())) {
-				sound.playLoop(GUITAR3, sound.getGuitar2Loops());
+			if (!sound.getAudioPlayerIsPlaying(TRACK3, sound.getGuitar2Loops())) {
+				sound.playLoop(TRACK3, sound.getGuitar2Loops());
 			} else {
-				sound.endLoop(GUITAR3, sound.getGuitar2Loops());
+				sound.endLoop(TRACK3, sound.getGuitar2Loops());
 			}
 		});
 		
 		guitar_2_4.setOnAction(event -> {
-			if (!sound.getAudioPlayerIsPlaying(GUITAR4, sound.getGuitar2Loops())) {
-				sound.playLoop(GUITAR4, sound.getGuitar2Loops());
+			if (!sound.getAudioPlayerIsPlaying(TRACK4, sound.getGuitar2Loops())) {
+				sound.playLoop(TRACK4, sound.getGuitar2Loops());
 			} else {
-				sound.endLoop(GUITAR4, sound.getGuitar2Loops());
+				sound.endLoop(TRACK4, sound.getGuitar2Loops());
 			}
 		});
 		
+		// --------OneShots----------
 		oneShot_1.setOnAction(event -> {
-			sound.playOneShot(OS1);
+			sound.playOneShot(TRACK1);
 		});
+		
+		oneShot_2.setOnAction(event -> {
+			sound.playOneShot(TRACK2);
+		});
+		
+		oneShot_3.setOnAction(event -> {
+			sound.playOneShot(TRACK3);
+		});
+		
+		oneShot_4.setOnAction(event -> {
+			sound.playOneShot(TRACK4);
+		});
+		
+		
 		
 		record_start.setOnAction(event -> {
 			if (record_start.isSelected()) {
