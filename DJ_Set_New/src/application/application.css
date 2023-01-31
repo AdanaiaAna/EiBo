@@ -28,7 +28,7 @@
  
  #buttons_1 {
     -fx-padding: 15;
-    -fx-spacing: 10;
+    -fx-spacing: 20;
 }
 
 #Drum1 {
@@ -106,6 +106,7 @@
 #button_3_round {
     -fx-min-height: 50px;
     -fx-background-radius: 5em;
+    -fx-alignment: center;
 }
 
 
