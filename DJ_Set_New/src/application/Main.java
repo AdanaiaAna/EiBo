@@ -28,6 +28,7 @@ public class Main extends Application {
 		controller = new DjViewController();
 		this.DjView = new DjView();
 		
+		
 		try {
 			
 			/* !!!!DAS IST FÜR FXML!!!!!
