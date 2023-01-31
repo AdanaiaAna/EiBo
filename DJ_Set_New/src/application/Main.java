@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import scenes.DjView;
 import scenes.DjViewController;
+import scenes.StartView;
 import scenes.ViewController;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -18,7 +19,7 @@ import javafx.scene.layout.Pane;
 public class Main extends Application {
 	
 	 Stage primaryStage;
-	 Pane StartView; 
+	 Pane startview; 
 	 Pane DjView;
 	 ViewController controller;
 	
@@ -27,6 +28,7 @@ public class Main extends Application {
 		
 		controller = new DjViewController();
 		this.DjView = new DjView();
+		startview = new StartView();
 		
 		try {
 			
