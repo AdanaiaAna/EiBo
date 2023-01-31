@@ -1,5 +1,6 @@
 package scenes;
 
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
@@ -64,8 +65,9 @@ public class DjView extends BorderPane {
 		HBox hbox_drums_1 = new HBox();
 		hbox_drums_1.setId("Drum-Buttons");
 		HBox hbox_drums_2 = new HBox();
+		hbox_drums_2.setId("Drum-Buttons");
 		HBox hbox_drums_extra = new HBox();
-		
+		hbox_drums_extra.setId("Drum-Buttons");
 		row_1.getChildren().addAll(hbox_drums_1,hbox_drums_2, hbox_drums_extra);
 		
 		//1. Button Reihe
@@ -147,11 +149,6 @@ public class DjView extends BorderPane {
 		hbox_bass_1.getChildren().addAll(bass_1, bass_2);
 		hbox_bass_2.getChildren().addAll(bass_3, bass_4);
 				
-				
-		bass_1.setId("button_3_round");
-		bass_2.setId("button_3_round");
-		bass_3.setId("button_3_round");
-		bass_4.setId("button_3_round");
 		
 		
 		Button stop = new Button("Stop");
@@ -178,6 +175,11 @@ public class DjView extends BorderPane {
 		oneShot_2 = new Button("OneShot 2");
 		oneShot_3 = new Button("OneShot 3");
 		oneShot_4 = new Button("OneShot 4");
+		
+		oneShot_1.setId("button_3_round");
+		oneShot_2.setId("button_3_round");
+		oneShot_3.setId("button_3_round");
+		oneShot_4.setId("button_3_round");
 				
 				
 		this.setRight(row_4);
@@ -185,6 +187,7 @@ public class DjView extends BorderPane {
 		row_4.getChildren().addAll(record_start, time, oneShot_1, oneShot_2, oneShot_3, oneShot_4);
 				
 		row_4.setId("buttons_4");
+		row_4.setAlignment(Pos.TOP_CENTER);
 		record_start.setId("record_btn");		
 				
 		// --------------------------------------------------------------
