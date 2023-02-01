@@ -72,11 +72,11 @@ public class Sounds {
 		guitar2Loops.add(minim.loadMP3File("Sounds/guitar2_4.mp3"));
 		
 		
-		//Bass-Gitarren (nicht fertig)
-		bassLoops.add(minim.loadMP3File("Sounds/guitar1_1.mp3"));
-		bassLoops.add(minim.loadMP3File("Sounds/guitar1_1.mp3"));
-		bassLoops.add(minim.loadMP3File("Sounds/guitar1_1.mp3"));
-		bassLoops.add(minim.loadMP3File("Sounds/guitar1_1.mp3"));
+		//Bass-Gitarren
+		bassLoops.add(minim.loadMP3File("Sounds/bass1.mp3"));
+		bassLoops.add(minim.loadMP3File("Sounds/bass2.mp3"));
+		bassLoops.add(minim.loadMP3File("Sounds/bass3.mp3"));
+		bassLoops.add(minim.loadMP3File("Sounds/bass4.mp3"));
 		
 		
 		// Oneshots
@@ -105,12 +105,6 @@ public class Sounds {
 		if (sound < soundlistLoops.size() && sound >= 0) {
 			soundlistLoops.get(sound).pause();
 			soundlistLoops.get(sound).rewind();
-		}
-	}
-	// falls auch 2 extra sounds parallel laufen können auch parallel laufen können sonst einfach wie immer die methode
-	public void playExtraDrumLoop(int sound) {
-		if (sound < extraDrumLoops.size() && sound >= 0) {
-			extraDrumLoops.get(sound).loop();
 		}
 	}
 	public void playOneShot(int sound) {
@@ -151,11 +145,15 @@ public class Sounds {
 	
 	
 	public void endRecording() {
+		time.set(0);
 		record.endRecord();
 		playTime.interrupt();
 		in.close();
 		out.close();
 		//habs auskommentiert sonst recorded es jedes mal haha
+		//record.save();
+	}
+	public void saveRecording() {
 		record.save();
 	}
 	public SimpleIntegerProperty getTimeProperty() {
@@ -171,5 +169,8 @@ public class Sounds {
 	}
 	public List<SimpleAudioPlayer> getGuitar2Loops(){
 		return guitar2Loops;
+	}
+	public List<SimpleAudioPlayer> getBassLoops(){
+		return bassLoops;
 	}
 }

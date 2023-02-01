@@ -55,8 +55,8 @@ public class DjViewController extends ViewController {
 	private final int TRACK4 = 3;
 	
 
-	public DjViewController() {
-		sound = new Sounds();
+	public DjViewController(Sounds sound) {
+		this.sound = sound;
 		currentView = new DjView();
 		DjView view = (DjView) currentView;
 
@@ -199,6 +199,35 @@ public class DjViewController extends ViewController {
 			}
 		});
 		
+		bass_1.setOnAction(event -> {
+			if (!sound.getAudioPlayerIsPlaying(TRACK1, sound.getBassLoops())) {
+				sound.playLoop(TRACK1, sound.getBassLoops());
+			} else {
+				sound.endLoop(TRACK1, sound.getBassLoops());
+			}
+		});
+		bass_2.setOnAction(event -> {
+			if (!sound.getAudioPlayerIsPlaying(TRACK2, sound.getBassLoops())) {
+				sound.playLoop(TRACK2, sound.getBassLoops());
+			} else {
+				sound.endLoop(TRACK2, sound.getBassLoops());
+			}
+		});
+		bass_3.setOnAction(event -> {
+			if (!sound.getAudioPlayerIsPlaying(TRACK3, sound.getBassLoops())) {
+				sound.playLoop(TRACK3, sound.getBassLoops());
+			} else {
+				sound.endLoop(TRACK3, sound.getBassLoops());
+			}
+		});
+		bass_4.setOnAction(event -> {
+			if (!sound.getAudioPlayerIsPlaying(TRACK4, sound.getBassLoops())) {
+				sound.playLoop(TRACK4, sound.getBassLoops());
+			} else {
+				sound.endLoop(TRACK4, sound.getBassLoops());
+			}
+		});
+		
 		
 		// --------OneShots----------
 		oneShot_1.setOnAction(event -> {
@@ -222,13 +251,10 @@ public class DjViewController extends ViewController {
 		record_start.setOnAction(event -> {
 			if (record_start.isSelected()) {
 				sound.record();
-				time.setVisible(true);
-				time.setManaged(true);
+				
 				
 			} else {
-				sound.endRecording();
-				time.setVisible(false);
-				time.setManaged(false);
+				//sound.endRecording();
 			}
 		});
 		sound.getTimeProperty().addListener(new ChangeListener<Number>() {
@@ -261,9 +287,8 @@ public class DjViewController extends ViewController {
 	}// End of initialize
 
 	@Override
-	public Button getButton() {
-		// TODO Auto-generated method stub
-		return null;
+	public ToggleButton getToggleButton() {
+		return record_start;
 	}
 
 }

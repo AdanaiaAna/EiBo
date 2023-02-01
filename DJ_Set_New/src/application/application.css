@@ -1,17 +1,34 @@
-.button, .toggle-button {
+.button{
 	-fx-min-height: 100;
 	-fx-min-width: 100;
 	-fx-text-fill: #b21933;
 	-fx-background-repeat: no-repeat no-repeat;
     -fx-background-position: center;
 }
+.toggle-button {
+	-fx-min-height: 150;
+	-fx-min-width: 150;
+	-fx-text-fill: #b21933;
+	-fx-background-repeat: no-repeat no-repeat;
+    -fx-background-position: center;
+}
+
 
 #playButton {
 	-fx-min-height: 60px;
 	-fx-min-width: 100px;
 	-fx-color: pink;
 }
-
+#Record-Button {
+		-fx-background-color: transparent;
+	-fx-background-image:url("/images/Record-Button-Off.png");
+	-fx-background-size: 130px 130px;
+}
+#Record-Button:selected {
+		-fx-background-color: transparent;
+	-fx-background-image:url("/images/Record-Button-On.png");
+	-fx-background-size: 130px 130px;
+}
 
 #background {
      -fx-background-color: black;
@@ -24,6 +41,9 @@
     -fx-padding: 25;
     -fx-spacing: 20;
     -fx-alignment: center;
+}
+#Bottom{
+	-fx-alignment: center;
 }
  
  #buttons_1 {
@@ -48,6 +68,7 @@
     -fx-color: red;
     -fx-padding: 15;
     -fx-spacing: 10;
+    
 
     -fx-border-style: solid inside;
     -fx-border-color: red;
@@ -116,13 +137,15 @@
 }
 
 
-#buttons_1, #buttons_2, #buttons_3, #buttons_4 {
+#buttons_1, #buttons_2, #buttons_3, #buttons_4, #Bottom {
      -fx-border-color: black;
+      -fx-border-width: 5;
  }
  
  #time-label {
 	-fx-alignment: center;
-	-fx-font-size: 16;
+	-fx-font-size: 20;
 	-fx-font-family: 'Times New Roman';
-	-fx-text-fill: black;
+	-fx-text-fill: white;
 }
+

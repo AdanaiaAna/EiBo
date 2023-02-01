@@ -124,12 +124,19 @@ public class DjView extends BorderPane {
 		
 		hbox_guitars_1_1.getChildren().addAll(guitar_1_1, guitar_1_2 );
 		hbox_guitars_1_2.getChildren().addAll( guitar_1_3, guitar_1_4);
-		
+		hbox_guitars_1_1.setAlignment(Pos.TOP_CENTER);
+		hbox_guitars_1_2.setAlignment(Pos.TOP_CENTER);
 		hbox_guitars_2_1.getChildren().addAll(guitar_2_1,guitar_2_2);
 		hbox_guitars_2_2.getChildren().addAll(guitar_2_3,guitar_2_4);
+		hbox_guitars_2_1.setAlignment(Pos.BASELINE_CENTER);
+		hbox_guitars_2_2.setAlignment(Pos.BASELINE_CENTER);
 		
-		row_2.getChildren().addAll(hbox_guitars_1_1,hbox_guitars_1_2, hbox_guitars_2_1, hbox_guitars_2_2);
+		HBox spacer = new HBox();
+		spacer.setPadding(new Insets(30, 10, 10, 30));
+		
+		row_2.getChildren().addAll(hbox_guitars_1_1,hbox_guitars_1_2, spacer, hbox_guitars_2_1, hbox_guitars_2_2);
 		this.setCenter(row_2);
+		
 		
 		
 		row_2.setId("buttons_2");
@@ -148,17 +155,19 @@ public class DjView extends BorderPane {
 		bass_4 = new Button("Bass 4");
 				
 		hbox_bass_1.getChildren().addAll(bass_1, bass_2);
+		hbox_bass_1.setAlignment(Pos.CENTER);
 		hbox_bass_2.getChildren().addAll(bass_3, bass_4);
-				
+		hbox_bass_2.setAlignment(Pos.CENTER);		
 		
 		
 		Button stop = new Button("Stop");
 		stop.setId("stop_btn");
 				
 		Slider slider = new Slider(0, 1, 0.5);
+		HBox.setHgrow(slider, Priority.ALWAYS);
 				
 		row_3.getChildren().addAll(hbox_bass_1, hbox_bass_2);
-				
+		row_3.setAlignment(Pos.CENTER);		
 		row_3.setId("buttons_3");
 		
 				
@@ -166,12 +175,13 @@ public class DjView extends BorderPane {
 		// ------------------------ 4. Spalte --------------------------------
 				
 		VBox row_4 = new VBox();
-				
-		record_start = new ToggleButton("⏹"); 
+		VBox recording = new VBox();		
+		record_start = new ToggleButton(); 
+		record_start.setId("Record-Button");
 		time = new Label("00:00");
-		time.setVisible(false);
 		time.setId("time-label");
-		time.setManaged(false);
+		recording.getChildren().addAll(time, record_start);
+		recording.setAlignment(Pos.CENTER);
 		oneShot_1 = new Button(" OneShot 1");
 		oneShot_2 = new Button("OneShot 2");
 		oneShot_3 = new Button("OneShot 3");
@@ -188,16 +198,15 @@ public class DjView extends BorderPane {
 		row_4.getChildren().addAll( oneShot_1, oneShot_2, oneShot_3, oneShot_4);
 				
 		row_4.setId("buttons_4");
-		row_4.setAlignment(Pos.TOP_CENTER);
-		record_start.setId("record_btn");		
+		row_4.setAlignment(Pos.CENTER);		
 				
 		// --------------------------------------------------------------
 		HBox bottomRow = new HBox();
 		bottomRow.setId("Bottom");
-		bottomRow.getChildren().addAll(slider, stop, record_start, time);
+		bottomRow.getChildren().addAll(slider, stop, recording);
 		bottomRow.setAlignment(Pos.BOTTOM_CENTER);
 		bottomRow.setPadding(new Insets(30, 10, 10, 30));
-		bottomRow.setSpacing(200);
+		bottomRow.setSpacing(100);
 		
 		soundButtons.getChildren().addAll(row_1, row_2,row_3,row_4);
 		overall.getChildren().addAll(soundButtons, bottomRow);

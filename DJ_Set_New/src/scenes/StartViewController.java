@@ -1,6 +1,7 @@
 package scenes;
 
 import javafx.scene.control.Button;
+import javafx.scene.control.ToggleButton;
 
 public class StartViewController extends ViewController {
 	
@@ -17,8 +18,14 @@ public class StartViewController extends ViewController {
 	}
 
 
-	@Override
 	public Button getButton() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public ToggleButton getToggleButton() {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -1,6 +1,7 @@
 package scenes;
 
 import javafx.scene.control.Button;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.Pane;
 
 public abstract class ViewController {
@@ -14,6 +15,6 @@ public abstract class ViewController {
 	
 	abstract public void initialize();
 	
-	public abstract Button getButton();
+	abstract public ToggleButton getToggleButton();
 
 }
