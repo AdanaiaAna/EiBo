@@ -6,6 +6,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.control.ToggleButton;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
@@ -69,7 +71,10 @@ public class DjView extends BorderPane {
 		hbox_drums_2.setId("Drum-Buttons");
 		HBox hbox_drums_extra = new HBox();
 		hbox_drums_extra.setId("Drum-Buttons");
-		row_1.getChildren().addAll(hbox_drums_1,hbox_drums_2, hbox_drums_extra);
+		
+		ImageView line = new ImageView(new Image("/images/Line_1.png"));
+        ImageViewPane imagPane = new ImageViewPane(line);
+		row_1.getChildren().addAll(hbox_drums_1,hbox_drums_2,imagPane, hbox_drums_extra);
 		
 		//1. Button Reihe
 		drum_1 = new Button(); 
@@ -80,6 +85,7 @@ public class DjView extends BorderPane {
 		//2.
 		drum_3 = new Button("Drum 3");
 		drum_4 = new Button("Drum 4");
+		
 		
 		drum_extra_1 = new Button("Extra Drum 1");
 		drum_extra_2 = new Button("Extra Drum 2");
@@ -116,11 +122,7 @@ public class DjView extends BorderPane {
 		guitar_2_1 = new Button("Gitarre (2) 1"); 
 		guitar_2_2 = new Button("Gitarre (2) 2");
 		guitar_2_3 = new Button("Gitarre (2) 3");
-		guitar_2_4 = new Button("Gitarre (2) 4");
-		
-		Button button_2_5 = new Button("Extra Gitarre 1");
-		Button button_2_6 = new Button("Extra Gitarre 2");
-		
+		guitar_2_4 = new Button("Gitarre (2) 4");	
 		
 		hbox_guitars_1_1.getChildren().addAll(guitar_1_1, guitar_1_2 );
 		hbox_guitars_1_2.getChildren().addAll( guitar_1_3, guitar_1_4);
@@ -131,10 +133,10 @@ public class DjView extends BorderPane {
 		hbox_guitars_2_1.setAlignment(Pos.BASELINE_CENTER);
 		hbox_guitars_2_2.setAlignment(Pos.BASELINE_CENTER);
 		
-		HBox spacer = new HBox();
-		spacer.setPadding(new Insets(30, 10, 10, 30));
+		ImageView line2 = new ImageView(new Image("/images/Line_1.png", 350, 10, false, false));
+		line2.setPreserveRatio(true);
+		row_2.getChildren().addAll(hbox_guitars_1_1,hbox_guitars_1_2,line2, hbox_guitars_2_1, hbox_guitars_2_2);
 		
-		row_2.getChildren().addAll(hbox_guitars_1_1,hbox_guitars_1_2, spacer, hbox_guitars_2_1, hbox_guitars_2_2);
 		this.setCenter(row_2);
 		
 		
