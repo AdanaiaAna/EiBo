@@ -1,5 +1,6 @@
 package business;
 
+import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -55,9 +56,9 @@ public class Sounds {
 		drumLoops.add(minim.loadMP3File("Sounds/drums4.mp3"));
 		
 		
-		// Extra Drum (nicht fettig) ----
-		extraDrumLoops.add(minim.loadMP3File("Sounds/guitar2_4.mp3"));
-		extraDrumLoops.add(minim.loadMP3File("Sounds/guitar2_4.mp3"));
+		// Extra Drum
+		extraDrumLoops.add(minim.loadMP3File("Sounds/extraDrum1.mp3"));
+		extraDrumLoops.add(minim.loadMP3File("Sounds/extraDrum2.mp3"));
 	
 		
 		// Gitarren
@@ -122,7 +123,7 @@ public class Sounds {
 	public void record() {
 		in = minim.getLineIn(Minim.STEREO, 2048);
 		out = minim.getLineOut( Minim.STEREO );
-		record = minim.createRecorder(in, "MySong" +  recordingnumber + ".wav");
+		record = minim.createRecorder(in, "Recordings/MySong" +  recordingnumber + ".wav");
 		record.beginRecord(); 
 		
 		playTime = new Thread() {
@@ -140,7 +141,7 @@ public class Sounds {
 				}
 			};
 		playTime.start();
-		recordingnumber ++;
+		
 	}
 	
 	
@@ -155,6 +156,7 @@ public class Sounds {
 	}
 	public void saveRecording() {
 		record.save();
+		recordingnumber ++;
 	}
 	public SimpleIntegerProperty getTimeProperty() {
 		return time;
@@ -172,5 +174,8 @@ public class Sounds {
 	}
 	public List<SimpleAudioPlayer> getBassLoops(){
 		return bassLoops;
+	}
+	public List<SimpleAudioPlayer> getExtraDrumLoops(){
+		return extraDrumLoops;
 	}
 }

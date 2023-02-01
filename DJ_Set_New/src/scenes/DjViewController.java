@@ -132,6 +132,22 @@ public class DjViewController extends ViewController {
 				sound.endLoop(TRACK4, sound.getDrumLoops());
 			}
 		});
+		//------- ExtraDrum Eventhandler------
+		drum_extra_1.setOnAction(event -> {
+			if (!sound.getAudioPlayerIsPlaying(TRACK1, sound.getExtraDrumLoops())) {
+				sound.playLoop(TRACK1, sound.getExtraDrumLoops());
+			} else {
+				sound.endLoop(TRACK1, sound.getExtraDrumLoops());
+			}
+		});
+		drum_extra_2.setOnAction(event -> {
+			if (!sound.getAudioPlayerIsPlaying(TRACK2, sound.getExtraDrumLoops())) {
+				sound.playLoop(TRACK2, sound.getExtraDrumLoops());
+			} else {
+				sound.endLoop(TRACK2, sound.getExtraDrumLoops());
+			}
+		});
+		
 		
 		
 		// -------Gitarren EventHandler--------
