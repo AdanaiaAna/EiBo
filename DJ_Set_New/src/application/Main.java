@@ -140,7 +140,6 @@ public class Main extends Application {
 			@Override
 			public void handle(ActionEvent event) {
 				sound.saveRecording();
-				
 				SequentialTransition anim = new SequentialTransition();
 				TranslateTransition transitionAnimBack = new TranslateTransition();
 				transitionAnimBack.setNode(alertPane);
@@ -150,14 +149,11 @@ public class Main extends Application {
 				anim.getChildren().addAll(transitionAnimBack);
 				anim.playFromStart();
 			}
-
 		});
 		
 		no.addEventHandler(ActionEvent.ACTION, new EventHandler<ActionEvent>() {
-
 			@Override
 			public void handle(ActionEvent event) {
-				
 				SequentialTransition anim = new SequentialTransition();
 				TranslateTransition transitionAnimBack = new TranslateTransition();
 				transitionAnimBack.setNode(alertPane);
@@ -167,7 +163,6 @@ public class Main extends Application {
 				anim.getChildren().addAll(transitionAnimBack);
 				anim.playFromStart();
 			}
-
 		});
 	}
 

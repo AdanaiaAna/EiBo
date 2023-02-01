@@ -246,7 +246,7 @@ public class DjViewController extends ViewController {
 			sound.playOneShot(TRACK4);
 		});
 		
-		
+		/*
 		
 		record_start.setOnAction(event -> {
 			if (record_start.isSelected()) {
@@ -256,7 +256,7 @@ public class DjViewController extends ViewController {
 			} else {
 				//sound.endRecording();
 			}
-		});
+		});*/
 		sound.getTimeProperty().addListener(new ChangeListener<Number>() {
 
 			// updated die aktuelle Position des Timebar und das Timelabel
