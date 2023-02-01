@@ -53,6 +53,7 @@ public class DjView extends BorderPane {
 	ToggleButton record_start;
 	Label time;
 	
+	Button stop;
 	/**
 	 * 
 	 */
@@ -162,7 +163,7 @@ public class DjView extends BorderPane {
 		hbox_bass_2.setAlignment(Pos.CENTER);		
 		
 		
-		Button stop = new Button("Stop");
+		stop = new Button("Stop");
 		stop.setId("stop_btn");
 				
 		Slider slider = new Slider(0, 1, 0.5);

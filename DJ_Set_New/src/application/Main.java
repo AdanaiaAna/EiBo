@@ -55,17 +55,7 @@ public class Main extends Application {
 
 		try {
 
-			/*
-			 * !!!!DAS IST FÜR FXML!!!!! Parent root =
-			 * FXMLLoader.load(getClass().getResource("/Fxml.fxml")); Scene scene = new
-			 * Scene(root);
-			 * 
-			 * scene.getStylesheets().add(getClass().getResource("FmlCss.css").
-			 * toExternalForm());
-			 * 
-			 * 
-			 * primaryStage.setScene(scene); primaryStage.show();
-			 */
+			
 			initialize();
 			root = scenes.get("StartView");
 			scene = new Scene(root, 1200, 800);

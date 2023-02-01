@@ -54,7 +54,9 @@ public class DjViewController extends ViewController {
 	private final int TRACK3 = 2;
 	private final int TRACK4 = 3;
 	
-
+	
+	Button stop;
+	
 	public DjViewController(Sounds sound) {
 		this.sound = sound;
 		currentView = new DjView();
@@ -88,6 +90,7 @@ public class DjViewController extends ViewController {
 		oneShot_3 = view.oneShot_3;
 		oneShot_4 = view.oneShot_4;
 		
+		stop = view.stop;
 		
 		record_start = view.record_start;
 		time = view.time;
@@ -262,17 +265,15 @@ public class DjViewController extends ViewController {
 			sound.playOneShot(TRACK4);
 		});
 		
-		/*
+		// Stop
+		stop.setOnAction(event -> {
+			sound.stop();
+		});
 		
-		record_start.setOnAction(event -> {
-			if (record_start.isSelected()) {
-				sound.record();
-				
-				
-			} else {
-				//sound.endRecording();
-			}
-		});*/
+		
+		
+		
+		// Zählt die Zeit hoch wenn man recordet
 		sound.getTimeProperty().addListener(new ChangeListener<Number>() {
 
 			// updated die aktuelle Position des Timebar und das Timelabel

@@ -97,6 +97,7 @@ public class Sounds {
 				break;
 			}
 		}
+		
 		if (sound < soundlistLoops.size() && sound >= 0) {
 			soundlistLoops.get(sound).loop();
 		}
@@ -123,7 +124,7 @@ public class Sounds {
 	public void record() {
 		in = minim.getLineIn(Minim.STEREO, 2048);
 		out = minim.getLineOut( Minim.STEREO );
-		record = minim.createRecorder(in, "Recordings/MySong" +  recordingnumber + ".wav");
+		record = minim.createRecorder(in, "MySong" +  recordingnumber + ".wav");
 		record.beginRecord(); 
 		
 		playTime = new Thread() {
@@ -144,7 +145,7 @@ public class Sounds {
 		
 	}
 	
-	
+	// RECORDING
 	public void endRecording() {
 		time.set(0);
 		record.endRecord();
@@ -154,6 +155,62 @@ public class Sounds {
 		//habs auskommentiert sonst recorded es jedes mal haha
 		//record.save();
 	}
+	
+	
+	// STOP 
+	public void stop() {
+		
+		for (SimpleAudioPlayer currentAudio : drumLoops) {
+			if (currentAudio.isPlaying()) {
+				currentAudio.pause();
+				currentAudio.rewind();
+				break;
+			}
+		}
+		
+		for (SimpleAudioPlayer currentAudio : guitar1Loops) {
+			if (currentAudio.isPlaying()) {
+				currentAudio.pause();
+				currentAudio.rewind();
+				break;
+			}
+		}
+		
+		for (SimpleAudioPlayer currentAudio : guitar2Loops) {
+			if (currentAudio.isPlaying()) {
+				currentAudio.pause();
+				currentAudio.rewind();
+				break;
+			}
+		}
+		
+		for (SimpleAudioPlayer currentAudio : bassLoops) {
+			if (currentAudio.isPlaying()) {
+				currentAudio.pause();
+				currentAudio.rewind();
+				break;
+			}
+		}
+		for (SimpleAudioPlayer currentAudio : extraDrumLoops) {
+			if (currentAudio.isPlaying()) {
+				currentAudio.pause();
+				currentAudio.rewind();
+				break;
+			}
+		}
+		
+		for (SimpleAudioPlayer currentAudio : osLoops) {
+			if (currentAudio.isPlaying()) {
+				currentAudio.pause();
+				currentAudio.rewind();
+				break;
+			}
+		}
+		
+	}
+	
+	
+	
 	public void saveRecording() {
 		record.save();
 		recordingnumber ++;
