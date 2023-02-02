@@ -1,10 +1,49 @@
-.button{
+
+/* ---------------- Start-Seite ---------------- */
+
+#start_background {
+	-fx-alignment: center;
+	-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #EB75C5, #01225B);  
+}
+
+#playButton {
+	-fx-min-height: 90px;
+	-fx-min-width: 150px;
+	-fx-background-color: white;
+	-fx-text-fill: #4E3B8B;
+	-fx-font-size: 25;
+	-fx-font-family: 'Delicious';
+	-fx-font-weight: bold;
+	
+	-fx-effect: dropshadow( gaussian , rgba(0,0,0,0.7) , 10,0,0,1 ); 
+}
+
+#playButton:hover {
+	-fx-background-color: #4E3B8B;
+	-fx-text-fill: white;
+}
+
+
+/* -------------------- Dj-Seite -------------------- */
+
+#dj_background {
+     -fx-background-color: black;
+     -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #434343, #1a1a1a);
+     -fx-border-color: linear-gradient(from 25% 25% to 100% 100%, #EB75C5, #01225B);
+     -fx-border-width: 30px;
+ }
+ 
+ 
+
+.button {
 	-fx-min-height: 100;
 	-fx-min-width: 100;
 	-fx-text-fill: #b21933;
 	-fx-background-repeat: no-repeat no-repeat;
     -fx-background-position: center;
 }
+
+
 .toggle-button {
 	-fx-min-height: 150;
 	-fx-min-width: 150;
@@ -14,54 +53,48 @@
 }
 
 
-#playButton {
-	-fx-min-height: 60px;
-	-fx-min-width: 100px;
-	-fx-color: pink;
-}
 #Record-Button {
-		-fx-background-color: transparent;
+	-fx-background-color: transparent;
 	-fx-background-image:url("/images/Record-Button-Off.png");
 	-fx-background-size: 130px 130px;
 }
 #Record-Button:selected {
-		-fx-background-color: transparent;
+	-fx-background-color: transparent;
 	-fx-background-image:url("/images/Record-Button-On.png");
 	-fx-background-size: 130px 130px;
 }
 
-#background {
-     -fx-background-color: black;
-     -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #434343, #1a1a1a);
-     -fx-border-color: linear-gradient(from 25% 25% to 100% 100%, #EB75C5, #01225B);
-    -fx-border-width: 30px;
- }
- 
- #Drum-Buttons {
+
+#Drum-Buttons {
     -fx-padding: 25;
     -fx-spacing: 20;
     -fx-alignment: center;
 }
+
 #Bottom{
 	-fx-alignment: center;
 }
  
- #buttons_1 {
+#buttons_1 {
     -fx-padding: 15;
     -fx-spacing: 20;
-    
+   -fx-border-color: black;
+   -fx-border-style: solid inside;
+}
 
+#Drum {
+	-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #434343, #1a1a1a);
+	
     -fx-border-style: solid inside;
-    -fx-border-color: black;
-
+	-fx-border-color: purple;
     -fx-border-width: 5;
 }
 
-#Drum1 {
-	-fx-background-color: transparent;
-	-fx-background-image:url("/images/Background.png");
-	-fx-background-size: 100px 100px;
+#Drum:pressed {
+    -fx-border-color: red;
 }
+
+
 
 
 #buttons_2 {
@@ -118,12 +151,6 @@
     -fx-border-width: 5;
 }
 
-#record_btn {
-    -fx-background-radius: 5em;
-    -fx-background-color: red;
-    -fx-border-radius: 5em;
-    -fx-border-color: black;
-}
 
 #button_2_round {
     -fx-min-height: 63px;
@@ -142,18 +169,21 @@
       -fx-border-width: 5;
  }
  
- #time-label {
+ 
+#time-label {
 	-fx-alignment: center;
 	-fx-font-size: 20;
 	-fx-font-family: 'Times New Roman';
 	-fx-text-fill: white;
 }
+
 #Yes-No-Button{
 	-fx-min-height: 50px;
     -fx-background-radius: 5em;
     -fx-text-fill: black;
 	-fx-font-size: 15;
 }
+
 #Button-Container{
 	-fx-alignment: center;
 }
