@@ -1,5 +1,5 @@
 
-/* ---------------- Start-Seite ---------------- */
+/* ------------------------------------------Start-Seite ------------------------------------------ */
 
 #start_background {
 	-fx-alignment: center;
@@ -15,6 +15,7 @@
 	-fx-font-family: 'Delicious';
 	-fx-font-weight: bold;
 	
+	
 	-fx-effect: dropshadow( gaussian , rgba(0,0,0,0.7) , 10,0,0,1 ); 
 }
 
@@ -24,7 +25,7 @@
 }
 
 
-/* -------------------- Dj-Seite -------------------- */
+/* ----------------------------------------- Dj-Seite ------------------------------------------ */
 
 #dj_background {
      -fx-background-color: black;
@@ -34,16 +35,147 @@
  }
  
  
+ /* -------------------- Drums -------------------- */
+ /* alle Drum Buttons */
+#Drum {
+	-fx-min-height: 110px;
+	-fx-min-width: 150px;
+	-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #383838, #161616 );
+    -fx-border-style: solid inside;
+	-fx-border-color: purple;
+    -fx-border-width: 5;
+    
+    -fx-font-family: 'Delicious';
+    -fx-text-fill: lightsteelblue;
+}
 
-.button {
-	-fx-min-height: 100;
-	-fx-min-width: 100;
-	-fx-text-fill: #b21933;
-	-fx-background-repeat: no-repeat no-repeat;
-    -fx-background-position: center;
+#Drum:pressed {
+    -fx-border-color: red;
+}
+
+#Drum:hover{
+    -fx-border-color: linear-gradient(to right, #f953c6, #b91d73);
+    
+}
+
+#Drum_Extra {
+	-fx-min-height: 90px;
+	-fx-min-width: 150px;
+	-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #434343, #1a1a1a);
+    -fx-border-style: solid inside;
+	-fx-border-color: blue;
+    -fx-border-width: 5;
+    
+    -fx-font-family: 'Delicious';
+	-fx-text-fill: lightsteelblue;
+}
+
+#Drum_Extra:hover {
+    -fx-border-color: linear-gradient(to right, #00c6ff, #0072ff);
+}
+
+/* alle HBoxen von Drum Buttons */
+#Drum-Buttons {
+    -fx-padding: 25;
+    -fx-spacing: 20;
+    -fx-alignment: center;
+}
+ 
+ 
+
+ /* -------------------- Guitars --------------------- */
+ 
+ /* alle Gitarre 1 Buttons */
+ #Guitar_1 {
+ 	-fx-color: 	indigo;
+ 	-fx-spacing: 10;
+ 	-fx-background-radius: 15px;
+ 	
+ 	-fx-font-family: 'Delicious';
+	-fx-text-fill: lightsteelblue;
+ 	
+ }
+
+ #Guitar_1:hover {
+ 	-fx-background-color:linear-gradient(to top, #6a3093, #a044ff);
+ } 
+ 
+ 
+ /* alle Gitarre 2 Buttons */
+#Guitar_2{
+ 	-fx-background-color: 	mediumvioletred;
+ 	-fx-spacing: 10;
+ 	-fx-background-radius: 15px;
+ 	-fx-border-style: solid inside;
+ 	-fx-border-radius: 15;
+ 	-fx-border-color: linear-gradient(from 0% 0% to 100% 100%, #434343, #1a1a1a);
+ 	
+ 	-fx-font-family: 'Delicious';
+	-fx-text-fill: lightsteelblue;
+ }
+ 
+ #Guitar_2:hover {
+ 	-fx-background-color: linear-gradient(to top, #b24592, #f15f79);
+ } 
+ 
+  
+  /* alle HBoxen von Gitarre Buttons */
+ #Gitarren-Buttons {
+    -fx-padding: 5;
+    -fx-spacing: 20;
+    -fx-alignment: center;
+}
+ 
+ 
+ /* -------------------- Bass --------------------- */
+
+ /* alle Bass Buttons */
+#Bass {
+	-fx-background-color: linear-gradient(to top, #667db6, #0082c8, #0082c8, #667db6);
+	-fx-spacing: 10;
+	-fx-background-radius: 30px;
+	-fx-border-style: solid inside;
+ 	-fx-border-radius: 30;
+ 	-fx-border-color: linear-gradient(from 0% 0% to 100% 100%, #434343, #1a1a1a);
+ 	
+ 	-fx-font-family: 'Delicious';
+	-fx-text-fill: midnightblue;
+}
+
+/* alle HBoxen von Bass Buttons */
+#Bass-Buttons{
+	-fx-padding: 5;
+    -fx-spacing: 20;
+    -fx-alignment: center;
+    
+    
+}
+
+#Bass:hover {
+	-fx-background-color: linear-gradient(to top, #7f7fd5, #86a8e7, #91eae4);
 }
 
 
+ /* -------------------- Oneshots --------------------- */
+ 
+ /* alle Oneshot Buttons */
+#Oneshot {
+    -fx-min-height: 50px;
+    -fx-background-radius: 5em;
+    -fx-alignment: center;
+    -fx-color: orange;
+    
+    -fx-font-family: 'Delicious';
+	-fx-text-fill: midnightblue;
+}
+
+#Oneshot:hover{
+	-fx-color: white;
+}
+
+ /* -------------------- Recording Button --------------------- */
+ 
+ /* Record Button */
 .toggle-button {
 	-fx-min-height: 150;
 	-fx-min-width: 150;
@@ -51,7 +183,6 @@
 	-fx-background-repeat: no-repeat no-repeat;
     -fx-background-position: center;
 }
-
 
 #Record-Button {
 	-fx-background-color: transparent;
@@ -64,118 +195,49 @@
 	-fx-background-size: 130px 130px;
 }
 
-
-#Drum-Buttons {
-    -fx-padding: 25;
-    -fx-spacing: 20;
-    -fx-alignment: center;
-}
-
-#Bottom{
-	-fx-alignment: center;
-}
- 
-#buttons_1 {
-    -fx-padding: 15;
-    -fx-spacing: 20;
-   -fx-border-color: black;
-   -fx-border-style: solid inside;
-}
-
-#Drum {
-	-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #434343, #1a1a1a);
-	
-    -fx-border-style: solid inside;
-	-fx-border-color: purple;
-    -fx-border-width: 5;
-}
-
-#Drum:pressed {
-    -fx-border-color: red;
-}
-
-
-
-
-#buttons_2 {
-    -fx-color: red;
-    -fx-padding: 15;
-    -fx-spacing: 10;
-    
-
-    -fx-border-style: solid inside;
-    -fx-border-color: red;
-
-    -fx-border-width: 5;
-}
-
-#buttons_3 {
-    -fx-color: yellow;
-    -fx-padding: 15;
-    -fx-spacing: 10;
-
-    -fx-border-style: solid inside;
-    -fx-border-color: yellow;
-
-    -fx-border-width: 5;
-}
-
-#stop_btn {
-    -fx-background-color: red;
-    -fx-text-fill: black;
-    -fx-border-color:black;
-}
-
-.slider .track {
-    -fx-background-color: black;
-    -fx-background-radius: 0;
-}
-
-.slider .thumb {
-    -fx-pref-height: 50px;
-    -fx-pref-width: 15px;
-    -fx-background-color: #252525;
-    -fx-background-radius: 0;
-    -fx-border-color: black;
-    -fx-border-width: 5px;
-}
-
-#buttons_4 {
-    -fx-color: orange;
-    -fx-padding: 15;
-    -fx-spacing: 10;
-
-    -fx-border-style: solid inside;
-    -fx-border-color: black;
-
-    -fx-border-width: 5;
-}
-
-
-#button_2_round {
-    -fx-min-height: 63px;
-    -fx-background-radius: 5em;
-}
-
-#button_3_round {
-    -fx-min-height: 50px;
-    -fx-background-radius: 5em;
-    -fx-alignment: center;
-}
-
-
-#buttons_1, #buttons_2, #buttons_3, #buttons_4, #Bottom {
-     -fx-border-color: black;
-      -fx-border-width: 5;
- }
- 
- 
 #time-label {
 	-fx-alignment: center;
 	-fx-font-size: 20;
 	-fx-font-family: 'Times New Roman';
 	-fx-text-fill: white;
 }
+
+ /* -------------------- Stop Button --------------------- */
+
+#stop_btn {
+	-fx-min-height: 110px;
+	-fx-min-width: 160px;
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #ed1c1c, #590909);
+    -fx-text-fill: black;
+    -fx-border-color:black;
+    
+    -fx-text-fill: black;
+	-fx-font-size: 25;
+	-fx-font-family: 'Delicious';
+	-fx-font-weight: bold;
+}
+
+
+
+/* -------------------- Volume Slider --------------------- */
+
+.slider .track {
+    -fx-background-color: white;
+    -fx-border-color:black;
+    -fx-background-radius: 7;
+}
+
+.slider .thumb {
+    -fx-pref-height: 70px;
+    -fx-pref-width: 30px;
+    -fx-background-color: linear-gradient(to top, #000000, #434343);
+    -fx-background-radius: 0;
+    -fx-border-color: black;
+    -fx-border-width: 5px;
+}
+
+
+/* -------------------- Alert Fenster --------------------- */
 
 #Yes-No-Button{
 	-fx-min-height: 50px;
@@ -184,7 +246,45 @@
 	-fx-font-size: 15;
 }
 
+
 #Button-Container{
 	-fx-alignment: center;
 }
+
+
+/* -------------------- Bottom Part --------------------- */
+
+#Bottom{
+	-fx-alignment: center;
+}
+
+
+
+
+/* -------------------- Sonstiges --------------------- */
+
+.button {
+	-fx-min-height: 100;
+	-fx-min-width: 100;
+	-fx-text-fill: #b21933;
+	-fx-background-repeat: no-repeat no-repeat;
+    -fx-background-position: center;
+}
+
+
+#row {
+	-fx-padding: 15;
+	-fx-spacing: 20;
+}
+
+
+#row, #Bottom {
+     -fx-border-color: black;
+     -fx-border-width: 5;
+ }
+ 
+ 
+
+
+
 

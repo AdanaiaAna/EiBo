@@ -92,6 +92,9 @@ public class DjView extends BorderPane {
 		
 		drum_extra_1 = new Button("Extra Drum 1");
 		drum_extra_2 = new Button("Extra Drum 2");
+		drum_extra_1.setId("Drum_Extra");
+		drum_extra_2.setId("Drum_Extra");
+		
 		
 		hbox_drums_1.getChildren().addAll(drum_1, drum_2 );
 		hbox_drums_2.getChildren().addAll( drum_3, drum_4);
@@ -102,12 +105,10 @@ public class DjView extends BorderPane {
 		
 		
 		//buttons_1.getChildren().addAll(button_1_1, button_1_2 , button_1_3, button_1_4);
-		row_1.setId("buttons_1");
+		row_1.setId("row");
 
 		
 		// ------------------2. Spalte --------------------------
-		
-		
 		
 		VBox row_2 = new VBox();
 		
@@ -115,6 +116,11 @@ public class DjView extends BorderPane {
 		HBox hbox_guitars_1_2 = new HBox();
 		HBox hbox_guitars_2_1 = new HBox();
 		HBox hbox_guitars_2_2 = new HBox();
+		
+		hbox_guitars_1_1.setId("Gitarren-Buttons");
+		hbox_guitars_1_2.setId("Gitarren-Buttons");
+		hbox_guitars_2_1.setId("Gitarren-Buttons");
+		hbox_guitars_2_2.setId("Gitarren-Buttons");
 		
 		
 		guitar_1_1 = new Button("Gitarre (1) 1"); 
@@ -126,6 +132,17 @@ public class DjView extends BorderPane {
 		guitar_2_2 = new Button("Gitarre (2) 2");
 		guitar_2_3 = new Button("Gitarre (2) 3");
 		guitar_2_4 = new Button("Gitarre (2) 4");	
+		
+		guitar_1_1.setId("Guitar_1");
+		guitar_1_2.setId("Guitar_1");
+		guitar_1_3.setId("Guitar_1");
+		guitar_1_4.setId("Guitar_1");
+		
+		guitar_2_1.setId("Guitar_2");
+		guitar_2_2.setId("Guitar_2");
+		guitar_2_3.setId("Guitar_2");
+		guitar_2_4.setId("Guitar_2");
+		
 		
 		hbox_guitars_1_1.getChildren().addAll(guitar_1_1, guitar_1_2 );
 		hbox_guitars_1_2.getChildren().addAll( guitar_1_3, guitar_1_4);
@@ -144,7 +161,7 @@ public class DjView extends BorderPane {
 		
 		
 		
-		row_2.setId("buttons_2");
+		row_2.setId("row");
 		
 		
 		// ---------------------- 3. Spalte ------------------------------
@@ -158,11 +175,20 @@ public class DjView extends BorderPane {
 		bass_2 = new Button("Bass 2");
 		bass_3 = new Button("Bass 3");
 		bass_4 = new Button("Bass 4");
+		
+		bass_1.setId("Bass");
+		bass_2.setId("Bass");
+		bass_3.setId("Bass");
+		bass_4.setId("Bass");
 				
 		hbox_bass_1.getChildren().addAll(bass_1, bass_2);
 		hbox_bass_1.setAlignment(Pos.CENTER);
 		hbox_bass_2.getChildren().addAll(bass_3, bass_4);
 		hbox_bass_2.setAlignment(Pos.CENTER);		
+		
+		hbox_bass_1.setId("Bass-Buttons");
+		hbox_bass_2.setId("Bass-Buttons");
+		
 		
 		
 		stop = new Button("Stop");
@@ -173,7 +199,7 @@ public class DjView extends BorderPane {
 				
 		row_3.getChildren().addAll(hbox_bass_1, hbox_bass_2);
 		row_3.setAlignment(Pos.CENTER);		
-		row_3.setId("buttons_3");
+		row_3.setId("row");
 		
 				
 		
@@ -192,17 +218,17 @@ public class DjView extends BorderPane {
 		oneShot_3 = new Button("OneShot 3");
 		oneShot_4 = new Button("OneShot 4");
 		
-		oneShot_1.setId("button_3_round");
-		oneShot_2.setId("button_3_round");
-		oneShot_3.setId("button_3_round");
-		oneShot_4.setId("button_3_round");
+		oneShot_1.setId("Oneshot");
+		oneShot_2.setId("Oneshot");
+		oneShot_3.setId("Oneshot");
+		oneShot_4.setId("Oneshot");
 				
 				
 		this.setRight(row_4);
 				
 		row_4.getChildren().addAll( oneShot_1, oneShot_2, oneShot_3, oneShot_4);
 				
-		row_4.setId("buttons_4");
+		row_4.setId("row");
 		row_4.setAlignment(Pos.CENTER);		
 				
 		// --------------------------------------------------------------

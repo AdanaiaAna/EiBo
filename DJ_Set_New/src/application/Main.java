@@ -59,7 +59,7 @@ public class Main extends Application {
 			
 			initialize();
 			root = scenes.get("StartView");
-			scene = new Scene(root, 1200, 800);
+			scene = new Scene(root, 1300, 900);
 
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 
