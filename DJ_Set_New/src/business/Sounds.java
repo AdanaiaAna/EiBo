@@ -150,10 +150,13 @@ public class Sounds {
 			osLoops.get(sound).play();
 		}
 	}
-
+	
+	/*
 	public boolean getAudioPlayerIsPlaying(int sound, List<SimpleAudioPlayer> soundlistLoops) {
 		return soundlistLoops.get(sound).isPlaying();
 	}
+	*/
+	
 	public boolean getAudioPlayerIsPlaying(int sound, String soundList) {
 		return soundMap.get(soundList).get(sound).isPlaying();
 	}
@@ -285,6 +288,7 @@ public class Sounds {
 	public SimpleIntegerProperty getTimeProperty() {
 		return time;
 	}
+	
 	/*
 	public List<SimpleAudioPlayer> getDrumLoops(){
 		return drumLoops;

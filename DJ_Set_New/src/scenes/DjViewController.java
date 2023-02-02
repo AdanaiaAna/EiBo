@@ -6,6 +6,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Slider;
 import javafx.scene.control.ToggleButton;
 
 public class DjViewController extends ViewController {
@@ -47,6 +48,7 @@ public class DjViewController extends ViewController {
 	private Button oneShot_3;
 	private Button oneShot_4;
 	
+	private Slider volumeSlider;
 	
 	private Sounds sound;
 	private final int TRACK1 = 0;
@@ -90,6 +92,7 @@ public class DjViewController extends ViewController {
 		oneShot_3 = view.oneShot_3;
 		oneShot_4 = view.oneShot_4;
 		
+		volumeSlider = view.volumeSlider;
 		stop = view.stop;
 		
 		record_start = view.record_start;
@@ -300,6 +303,15 @@ public class DjViewController extends ViewController {
 				});
 			}
 		});
+		
+		//Property f�r �nderungen am Volume Slider
+				volumeSlider.valueProperty().addListener(new ChangeListener<Number>() {
+					//�ndert das Volume des Players mit dem neuen Wert des Sliders
+					public void changed(ObservableValue<? extends Number> oV, Number oldValue, Number newValue) {
+						sound.setVolume(newValue.floatValue());
+					}
+				});	
+		
 		
 	}// End of initialize
 

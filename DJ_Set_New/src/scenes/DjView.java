@@ -48,7 +48,7 @@ public class DjView extends BorderPane {
 	Button oneShot_3;
 	Button oneShot_4;
 	
-	
+	Slider volumeSlider;
 	
 	ToggleButton record_start;
 	Label time;
@@ -166,8 +166,8 @@ public class DjView extends BorderPane {
 		stop = new Button("Stop");
 		stop.setId("stop_btn");
 				
-		Slider slider = new Slider(0, 1, 0.5);
-		HBox.setHgrow(slider, Priority.ALWAYS);
+		volumeSlider = new Slider(0, 1, 0.5);
+		HBox.setHgrow(volumeSlider, Priority.ALWAYS);
 				
 		row_3.getChildren().addAll(hbox_bass_1, hbox_bass_2);
 		row_3.setAlignment(Pos.CENTER);		
@@ -206,7 +206,7 @@ public class DjView extends BorderPane {
 		// --------------------------------------------------------------
 		HBox bottomRow = new HBox();
 		bottomRow.setId("Bottom");
-		bottomRow.getChildren().addAll(slider, stop, recording);
+		bottomRow.getChildren().addAll(volumeSlider, stop, recording);
 		bottomRow.setAlignment(Pos.BOTTOM_CENTER);
 		bottomRow.setPadding(new Insets(30, 10, 10, 30));
 		bottomRow.setSpacing(100);
