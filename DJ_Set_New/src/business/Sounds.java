@@ -1,8 +1,11 @@
 package business;
 
 import java.io.File;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import ddf.minim.AudioInput;
 import ddf.minim.AudioOutput;
@@ -27,7 +30,8 @@ public class Sounds {
 	//Oneshots 
 	private List<SimpleAudioPlayer> osLoops = new LinkedList<SimpleAudioPlayer>();
 	
-	
+	private HashMap<String, List<SimpleAudioPlayer>> soundMap = new HashMap<>();
+
 	
 	//private List<SimpleAudioPlayer> soundlistLoops = new LinkedList<SimpleAudioPlayer>();
 	
@@ -86,10 +90,39 @@ public class Sounds {
 		osLoops.add(minim.loadMP3File("Sounds/OneShot3.mp3"));
 		osLoops.add(minim.loadMP3File("Sounds/OneShot4.mp3"));
 		
+		//Sound Listen in die Hashmap
+		soundMap.put("Drum", drumLoops);
+		soundMap.put("ExtraDrum", extraDrumLoops);
+		soundMap.put("Guitar1", guitar1Loops);
+		soundMap.put("Guitar2", guitar2Loops);
+		soundMap.put("Bass", bassLoops);
+		soundMap.put("Oneshot", osLoops);
 		
 	}
 
-	public void playLoop(int sound, List<SimpleAudioPlayer> soundlistLoops) {
+	public void playLoop(int sound, String soundList) {
+		List<SimpleAudioPlayer> soundlistLoops = soundMap.get(soundList);
+		for (SimpleAudioPlayer currentAudio : soundlistLoops) {
+			if (currentAudio.isPlaying()) {
+				currentAudio.pause();
+				currentAudio.rewind();
+				break;
+			}
+		}
+		if (sound < soundlistLoops.size() && sound >= 0) {
+			soundlistLoops.get(sound).loop();
+		}
+	}
+	
+	public void endLoop(int sound, String soundList) {
+		List<SimpleAudioPlayer> soundlistLoops = soundMap.get(soundList);
+		if (sound < soundlistLoops.size() && sound >= 0) {
+			soundlistLoops.get(sound).pause();
+			soundlistLoops.get(sound).rewind();
+		}
+	}
+
+	/*public void playLoop(int sound, List<SimpleAudioPlayer> soundlistLoops) {
 		for (SimpleAudioPlayer currentAudio : soundlistLoops) {
 			if (currentAudio.isPlaying()) {
 				currentAudio.pause();
@@ -102,13 +135,15 @@ public class Sounds {
 			soundlistLoops.get(sound).loop();
 		}
 	}
+	
 
 	public void endLoop(int sound, List<SimpleAudioPlayer> soundlistLoops) {
 		if (sound < soundlistLoops.size() && sound >= 0) {
 			soundlistLoops.get(sound).pause();
 			soundlistLoops.get(sound).rewind();
 		}
-	}
+	}*/
+	
 	public void playOneShot(int sound) {
 		if (sound < osLoops.size() && sound >= 0) {
 			osLoops.get(sound).rewind();
@@ -118,6 +153,9 @@ public class Sounds {
 
 	public boolean getAudioPlayerIsPlaying(int sound, List<SimpleAudioPlayer> soundlistLoops) {
 		return soundlistLoops.get(sound).isPlaying();
+	}
+	public boolean getAudioPlayerIsPlaying(int sound, String soundList) {
+		return soundMap.get(soundList).get(sound).isPlaying();
 	}
 	
 	
@@ -160,7 +198,19 @@ public class Sounds {
 	// STOP 
 	public void stop() {
 		
-		for (SimpleAudioPlayer currentAudio : drumLoops) {
+		 Set<Map.Entry<String, List<SimpleAudioPlayer>>> entrySet = soundMap.entrySet();
+		    for (Map.Entry<String, List<SimpleAudioPlayer>> entry : entrySet) {
+		      List<SimpleAudioPlayer> soundlist = entry.getValue();
+		      for (SimpleAudioPlayer currentAudio : soundlist) {
+		    	  if (currentAudio.isPlaying()) {
+						currentAudio.pause();
+						currentAudio.rewind();
+						break;
+					}
+		      }
+		   }
+		
+		/*for (SimpleAudioPlayer currentAudio : drumLoops) {
 			if (currentAudio.isPlaying()) {
 				currentAudio.pause();
 				currentAudio.rewind();
@@ -205,10 +255,27 @@ public class Sounds {
 				currentAudio.rewind();
 				break;
 			}
-		}
+		}*/
 		
 	}
 	
+	public void setVolume(float normalVolume) {
+		//normal volume to db
+		float db = (float) (20 * Math.log10(normalVolume));
+		
+		 Set<Map.Entry<String, List<SimpleAudioPlayer>>> entrySet = soundMap.entrySet();
+		    for (Map.Entry<String, List<SimpleAudioPlayer>> entry : entrySet) {
+		      List<SimpleAudioPlayer> soundlist = entry.getValue();
+		      // Iterating over the linked list
+		      for (SimpleAudioPlayer currentAudio : soundlist) {
+		    	  if (currentAudio.isPlaying()) {
+						currentAudio.setGain(db);
+						break;
+					}
+		      }
+		   }
+		
+	}
 	
 	
 	public void saveRecording() {
@@ -218,7 +285,7 @@ public class Sounds {
 	public SimpleIntegerProperty getTimeProperty() {
 		return time;
 	}
-	
+	/*
 	public List<SimpleAudioPlayer> getDrumLoops(){
 		return drumLoops;
 	}
@@ -234,5 +301,5 @@ public class Sounds {
 	}
 	public List<SimpleAudioPlayer> getExtraDrumLoops(){
 		return extraDrumLoops;
-	}
+	}*/
 }

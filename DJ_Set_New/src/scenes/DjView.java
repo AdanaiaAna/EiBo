@@ -73,7 +73,7 @@ public class DjView extends BorderPane {
 		HBox hbox_drums_extra = new HBox();
 		hbox_drums_extra.setId("Drum-Buttons");
 		
-		ImageView line = new ImageView(new Image("/images/Line_1.png"));
+		ImageView line = new ImageView(new Image("/images/Line_1.png", 350, 12, false, false));
         ImageViewPane imagPane = new ImageViewPane(line);
 		row_1.getChildren().addAll(hbox_drums_1,hbox_drums_2,imagPane, hbox_drums_extra);
 		
@@ -135,8 +135,8 @@ public class DjView extends BorderPane {
 		hbox_guitars_2_2.setAlignment(Pos.BASELINE_CENTER);
 		
 		ImageView line2 = new ImageView(new Image("/images/Line_1.png", 350, 10, false, false));
-		line2.setPreserveRatio(true);
-		row_2.getChildren().addAll(hbox_guitars_1_1,hbox_guitars_1_2,line2, hbox_guitars_2_1, hbox_guitars_2_2);
+		ImageViewPane imagPane2 = new ImageViewPane(line2);
+		row_2.getChildren().addAll(hbox_guitars_1_1,hbox_guitars_1_2,imagPane2, hbox_guitars_2_1, hbox_guitars_2_2);
 		
 		this.setCenter(row_2);
 		
@@ -210,6 +210,7 @@ public class DjView extends BorderPane {
 		bottomRow.setAlignment(Pos.BOTTOM_CENTER);
 		bottomRow.setPadding(new Insets(30, 10, 10, 30));
 		bottomRow.setSpacing(100);
+		this.setBottom(bottomRow);
 		
 		soundButtons.getChildren().addAll(row_1, row_2,row_3,row_4);
 		overall.getChildren().addAll(soundButtons, bottomRow);
@@ -219,6 +220,7 @@ public class DjView extends BorderPane {
 		HBox.setHgrow(row_2, Priority.ALWAYS);
 		HBox.setHgrow(row_3, Priority.ALWAYS);
 		HBox.setHgrow(row_4, Priority.ALWAYS);
+		VBox.setVgrow(bottomRow, Priority.ALWAYS);
 		
 		// --------------------------------------------------------------
 		
