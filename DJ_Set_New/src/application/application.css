@@ -37,7 +37,7 @@
     -fx-border-width: 30px;
  }
  
-  #Drum-Buttons {
+ #Drum-Buttons {
     -fx-padding: 25;
     -fx-spacing: 20;
     -fx-alignment: center;
@@ -147,5 +147,14 @@
 	-fx-font-size: 20;
 	-fx-font-family: 'Times New Roman';
 	-fx-text-fill: white;
+}
+#Yes-No-Button{
+	-fx-min-height: 50px;
+    -fx-background-radius: 5em;
+    -fx-text-fill: black;
+	-fx-font-size: 15;
+}
+#Button-Container{
+	-fx-alignment: center;
 }
 

@@ -105,49 +105,49 @@ public class DjViewController extends ViewController {
 		
 		// -------Drum Event Handlers--------
 		drum_1.setOnAction(event -> {
-			if (!sound.getAudioPlayerIsPlaying(TRACK1, sound.getDrumLoops())) {
-				sound.playLoop(TRACK1, sound.getDrumLoops());
+			if (!sound.getAudioPlayerIsPlaying(TRACK1, "Drum")) {
+				sound.playLoop(TRACK1, "Drum");
 			} else {
-				sound.endLoop(TRACK1, sound.getDrumLoops());
+				sound.endLoop(TRACK1, "Drum");
 			}
 		});
 		
 		drum_2.setOnAction(event -> {
-			if (!sound.getAudioPlayerIsPlaying(TRACK2, sound.getDrumLoops())) {
-				sound.playLoop(TRACK2, sound.getDrumLoops());
+			if (!sound.getAudioPlayerIsPlaying(TRACK2, "Drum")) {
+				sound.playLoop(TRACK2, "Drum");
 			} else {
-				sound.endLoop(TRACK2, sound.getDrumLoops());
+				sound.endLoop(TRACK2, "Drum");
 			}
 		});
 		
 		drum_3.setOnAction(event -> {
-			if (!sound.getAudioPlayerIsPlaying(TRACK3, sound.getDrumLoops())) {
-				sound.playLoop(TRACK3, sound.getDrumLoops());
+			if (!sound.getAudioPlayerIsPlaying(TRACK3, "Drum")) {
+				sound.playLoop(TRACK3, "Drum");
 			} else {
-				sound.endLoop(TRACK3, sound.getDrumLoops());
+				sound.endLoop(TRACK3, "Drum");
 			}
 		});
 		
 		drum_4.setOnAction(event -> {
-			if (!sound.getAudioPlayerIsPlaying(TRACK4, sound.getDrumLoops())) {
-				sound.playLoop(TRACK4, sound.getDrumLoops());
+			if (!sound.getAudioPlayerIsPlaying(TRACK4, "Drum")) {
+				sound.playLoop(TRACK4, "Drum");
 			} else {
-				sound.endLoop(TRACK4, sound.getDrumLoops());
+				sound.endLoop(TRACK4, "Drum");
 			}
 		});
 		//------- ExtraDrum Eventhandler------
 		drum_extra_1.setOnAction(event -> {
-			if (!sound.getAudioPlayerIsPlaying(TRACK1, sound.getExtraDrumLoops())) {
-				sound.playLoop(TRACK1, sound.getExtraDrumLoops());
+			if (!sound.getAudioPlayerIsPlaying(TRACK1, "ExtraDrum")) {
+				sound.playLoop(TRACK1, "ExtraDrum");
 			} else {
-				sound.endLoop(TRACK1, sound.getExtraDrumLoops());
+				sound.endLoop(TRACK1, "ExtraDrum");
 			}
 		});
 		drum_extra_2.setOnAction(event -> {
-			if (!sound.getAudioPlayerIsPlaying(TRACK2, sound.getExtraDrumLoops())) {
-				sound.playLoop(TRACK2, sound.getExtraDrumLoops());
+			if (!sound.getAudioPlayerIsPlaying(TRACK2, "ExtraDrum")) {
+				sound.playLoop(TRACK2, "ExtraDrum");
 			} else {
-				sound.endLoop(TRACK2, sound.getExtraDrumLoops());
+				sound.endLoop(TRACK2, "ExtraDrum");
 			}
 		});
 		
@@ -155,95 +155,95 @@ public class DjViewController extends ViewController {
 		
 		// -------Gitarren EventHandler--------
 		guitar_1_1.setOnAction(event -> {
-			if (!sound.getAudioPlayerIsPlaying(TRACK1, sound.getGuitar1Loops())) {
-				sound.playLoop(TRACK1, sound.getGuitar1Loops());
+			if (!sound.getAudioPlayerIsPlaying(TRACK1, "Guitar1")) {
+				sound.playLoop(TRACK1, "Guitar1");
 			} else {
-				sound.endLoop(TRACK1, sound.getGuitar1Loops());
+				sound.endLoop(TRACK1, "Guitar1");
 			}
 		});
 		
 		guitar_1_2.setOnAction(event -> {
-			if (!sound.getAudioPlayerIsPlaying(TRACK2, sound.getGuitar1Loops())) {
-				sound.playLoop(TRACK2, sound.getGuitar1Loops());
+			if (!sound.getAudioPlayerIsPlaying(TRACK2, "Guitar1")) {
+				sound.playLoop(TRACK2, "Guitar1");
 			} else {
-				sound.endLoop(TRACK2, sound.getGuitar1Loops());
+				sound.endLoop(TRACK2, "Guitar1");
 			}
 		});
 		
 		guitar_1_3.setOnAction(event -> {
-			if (!sound.getAudioPlayerIsPlaying(TRACK3, sound.getGuitar1Loops())) {
-				sound.playLoop(TRACK3, sound.getGuitar1Loops());
+			if (!sound.getAudioPlayerIsPlaying(TRACK3, "Guitar1")) {
+				sound.playLoop(TRACK3, "Guitar1");
 			} else {
-				sound.endLoop(TRACK3, sound.getGuitar1Loops());
+				sound.endLoop(TRACK3, "Guitar1");
 			}
 		});
 		
 		guitar_1_4.setOnAction(event -> {
-			if (!sound.getAudioPlayerIsPlaying(TRACK4, sound.getGuitar1Loops())) {
-				sound.playLoop(TRACK4, sound.getGuitar1Loops());
+			if (!sound.getAudioPlayerIsPlaying(TRACK4, "Guitar1")) {
+				sound.playLoop(TRACK4,"Guitar1");
 			} else {
-				sound.endLoop(TRACK4, sound.getGuitar1Loops());
+				sound.endLoop(TRACK4, "Guitar1");
 			}
 		});
 		
 		guitar_2_1.setOnAction(event -> {
-			if (!sound.getAudioPlayerIsPlaying(TRACK1, sound.getGuitar2Loops())) {
-				sound.playLoop(TRACK1, sound.getGuitar2Loops());
+			if (!sound.getAudioPlayerIsPlaying(TRACK1, "Guitar2")) {
+				sound.playLoop(TRACK1, "Guitar2");
 			} else {
-				sound.endLoop(TRACK1, sound.getGuitar2Loops());
+				sound.endLoop(TRACK1, "Guitar2");
 			}
 		});
 		
 		guitar_2_2.setOnAction(event -> {
-			if (!sound.getAudioPlayerIsPlaying(TRACK2, sound.getGuitar2Loops())) {
-				sound.playLoop(TRACK2, sound.getGuitar2Loops());
+			if (!sound.getAudioPlayerIsPlaying(TRACK2, "Guitar2")) {
+				sound.playLoop(TRACK2, "Guitar2");
 			} else {
-				sound.endLoop(TRACK2, sound.getGuitar2Loops());
+				sound.endLoop(TRACK2, "Guitar2");
 			}
 		});
 		
 		guitar_2_3.setOnAction(event -> {
-			if (!sound.getAudioPlayerIsPlaying(TRACK3, sound.getGuitar2Loops())) {
-				sound.playLoop(TRACK3, sound.getGuitar2Loops());
+			if (!sound.getAudioPlayerIsPlaying(TRACK3, "Guitar2")) {
+				sound.playLoop(TRACK3, "Guitar2");
 			} else {
-				sound.endLoop(TRACK3, sound.getGuitar2Loops());
+				sound.endLoop(TRACK3, "Guitar2");
 			}
 		});
 		
 		guitar_2_4.setOnAction(event -> {
-			if (!sound.getAudioPlayerIsPlaying(TRACK4, sound.getGuitar2Loops())) {
-				sound.playLoop(TRACK4, sound.getGuitar2Loops());
+			if (!sound.getAudioPlayerIsPlaying(TRACK4, "Guitar2")) {
+				sound.playLoop(TRACK4, "Guitar2");
 			} else {
-				sound.endLoop(TRACK4, sound.getGuitar2Loops());
+				sound.endLoop(TRACK4, "Guitar2");
 			}
 		});
 		
 		bass_1.setOnAction(event -> {
-			if (!sound.getAudioPlayerIsPlaying(TRACK1, sound.getBassLoops())) {
-				sound.playLoop(TRACK1, sound.getBassLoops());
+			if (!sound.getAudioPlayerIsPlaying(TRACK1, "Bass")) {
+				sound.playLoop(TRACK1, "Bass");
 			} else {
-				sound.endLoop(TRACK1, sound.getBassLoops());
+				sound.endLoop(TRACK1, "Bass");
 			}
 		});
 		bass_2.setOnAction(event -> {
-			if (!sound.getAudioPlayerIsPlaying(TRACK2, sound.getBassLoops())) {
-				sound.playLoop(TRACK2, sound.getBassLoops());
+			if (!sound.getAudioPlayerIsPlaying(TRACK2, "Bass")) {
+				sound.playLoop(TRACK2, "Bass");
 			} else {
-				sound.endLoop(TRACK2, sound.getBassLoops());
+				sound.endLoop(TRACK2, "Bass");
 			}
 		});
 		bass_3.setOnAction(event -> {
-			if (!sound.getAudioPlayerIsPlaying(TRACK3, sound.getBassLoops())) {
-				sound.playLoop(TRACK3, sound.getBassLoops());
+			if (!sound.getAudioPlayerIsPlaying(TRACK3, "Bass")) {
+				sound.playLoop(TRACK3, "Bass");
 			} else {
-				sound.endLoop(TRACK3, sound.getBassLoops());
+				sound.endLoop(TRACK3,"Bass");
 			}
 		});
 		bass_4.setOnAction(event -> {
-			if (!sound.getAudioPlayerIsPlaying(TRACK4, sound.getBassLoops())) {
-				sound.playLoop(TRACK4, sound.getBassLoops());
+			if (!sound.getAudioPlayerIsPlaying(TRACK4, "Bass")) {
+				sound.playLoop(TRACK4, "Bass");
 			} else {
-				sound.endLoop(TRACK4, sound.getBassLoops());
+				sound.endLoop(TRACK4,"Bass");
 			}
 		});
 		

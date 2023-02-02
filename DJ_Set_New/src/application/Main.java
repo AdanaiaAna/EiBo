@@ -36,13 +36,14 @@ public class Main extends Application {
 	Pane DjView;
 	ViewController controller;
 	Button play;
-	Button yes;
-	Button no;
+	Button yesButton;
+	Button noButton;
 	ToggleButton record_start;
 	public HashMap<String, Pane> scenes;
 	Pane root;
 	Scene scene;
 	Sounds sound;
+	AlertPane alertPane;
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -98,9 +99,9 @@ public class Main extends Application {
 		scenes = new HashMap<String, Pane>();
 		scenes.put("StartView", startView);
 
-		AlertPane alertPane = new AlertPane();
-		yes = alertPane.getYesButton();
-		no = alertPane.getNoButton();
+		alertPane = new AlertPane();
+		yesButton = alertPane.getYesButton();
+		noButton = alertPane.getNoButton();
 		StackPane djView = new StackPane();
 		record_start = controller.getToggleButton();
 		djView.getChildren().addAll(controller.getView(), alertPane);
@@ -125,33 +126,19 @@ public class Main extends Application {
 				anim.playFromStart();
 			}
 		});
-		yes.addEventHandler(ActionEvent.ACTION, new EventHandler<ActionEvent>() {
+		yesButton.addEventHandler(ActionEvent.ACTION, new EventHandler<ActionEvent>() {
 
 			@Override
 			public void handle(ActionEvent event) {
 				sound.saveRecording();
-				SequentialTransition anim = new SequentialTransition();
-				TranslateTransition transitionAnimBack = new TranslateTransition();
-				transitionAnimBack.setNode(alertPane);
-				transitionAnimBack.setToY(alertPane.getPrefHeight());
-				transitionAnimBack.setDuration(Duration.millis(200));
-				transitionAnimBack.setInterpolator(Interpolator.EASE_IN);
-				anim.getChildren().addAll(transitionAnimBack);
-				anim.playFromStart();
+				moveDown();
 			}
 		});
 		
-		no.addEventHandler(ActionEvent.ACTION, new EventHandler<ActionEvent>() {
+		noButton.addEventHandler(ActionEvent.ACTION, new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				SequentialTransition anim = new SequentialTransition();
-				TranslateTransition transitionAnimBack = new TranslateTransition();
-				transitionAnimBack.setNode(alertPane);
-				transitionAnimBack.setToY(alertPane.getPrefHeight());
-				transitionAnimBack.setDuration(Duration.millis(200));
-				transitionAnimBack.setInterpolator(Interpolator.EASE_IN);
-				anim.getChildren().addAll(transitionAnimBack);
-				anim.playFromStart();
+				moveDown();
 			}
 		});
 	}
@@ -159,6 +146,18 @@ public class Main extends Application {
 	public void playButtonHandler(ActionEvent e) {
 		root = scenes.get("DJ-View");
 		scene.setRoot(root);
+	}
+	
+	public void moveDown() {
+
+		SequentialTransition anim = new SequentialTransition();
+		TranslateTransition transitionAnimBack = new TranslateTransition();
+		transitionAnimBack.setNode(alertPane);
+		transitionAnimBack.setToY(alertPane.getPrefHeight());
+		transitionAnimBack.setDuration(Duration.millis(200));
+		transitionAnimBack.setInterpolator(Interpolator.EASE_IN);
+		anim.getChildren().addAll(transitionAnimBack);
+		anim.playFromStart();
 	}
 
 	public static void main(String[] args) {
