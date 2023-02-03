@@ -146,12 +146,12 @@ public class DjView extends BorderPane {
 		
 		hbox_guitars_1_1.getChildren().addAll(guitar_1_1, guitar_1_2 );
 		hbox_guitars_1_2.getChildren().addAll( guitar_1_3, guitar_1_4);
-		hbox_guitars_1_1.setAlignment(Pos.TOP_CENTER);
-		hbox_guitars_1_2.setAlignment(Pos.TOP_CENTER);
+		hbox_guitars_1_1.setAlignment(Pos.CENTER);
+		hbox_guitars_1_2.setAlignment(Pos.CENTER);
 		hbox_guitars_2_1.getChildren().addAll(guitar_2_1,guitar_2_2);
 		hbox_guitars_2_2.getChildren().addAll(guitar_2_3,guitar_2_4);
-		hbox_guitars_2_1.setAlignment(Pos.BASELINE_CENTER);
-		hbox_guitars_2_2.setAlignment(Pos.BASELINE_CENTER);
+		hbox_guitars_2_1.setAlignment(Pos.CENTER);
+		hbox_guitars_2_2.setAlignment(Pos.CENTER);
 		
 		ImageView line2 = new ImageView(new Image("/images/Line_1.png", 350, 10, false, false));
 		ImageViewPane imagPane2 = new ImageViewPane(line2);
