@@ -77,13 +77,13 @@ public class DjView extends BorderPane {
         ImageViewPane imagPane = new ImageViewPane(line);
 		row_1.getChildren().addAll(hbox_drums_1,hbox_drums_2,imagPane, hbox_drums_extra);
 		
-		//1. Button Reihe
+		
 		drum_1 = new Button("Drum 1"); 
 		drum_2 = new Button("Drum 2");
 		drum_1.setId("Drum");
 		drum_2.setId("Drum");
 		
-		//2.
+		
 		drum_3 = new Button("Drum 3");
 		drum_4 = new Button("Drum 4");
 		drum_3.setId("Drum");
@@ -103,8 +103,6 @@ public class DjView extends BorderPane {
 		
 		this.setLeft(row_1);
 		
-		
-		//buttons_1.getChildren().addAll(button_1_1, button_1_2 , button_1_3, button_1_4);
 		row_1.setId("row");
 
 		
@@ -158,9 +156,7 @@ public class DjView extends BorderPane {
 		row_2.getChildren().addAll(hbox_guitars_1_1,hbox_guitars_1_2,imagPane2, hbox_guitars_2_1, hbox_guitars_2_2);
 		
 		this.setCenter(row_2);
-		
-		
-		
+	
 		row_2.setId("row");
 		
 		
@@ -188,8 +184,6 @@ public class DjView extends BorderPane {
 		
 		hbox_bass_1.setId("Bass-Buttons");
 		hbox_bass_2.setId("Bass-Buttons");
-		
-		
 		
 		stop = new Button("Stop");
 		stop.setId("stop_btn");
@@ -232,6 +226,7 @@ public class DjView extends BorderPane {
 		row_4.setAlignment(Pos.CENTER);		
 				
 		// --------------------------------------------------------------
+		
 		HBox bottomRow = new HBox();
 		bottomRow.setId("Bottom");
 		bottomRow.getChildren().addAll(volumeSlider, stop, recording);
@@ -250,21 +245,8 @@ public class DjView extends BorderPane {
 		HBox.setHgrow(row_4, Priority.ALWAYS);
 		VBox.setVgrow(bottomRow, Priority.ALWAYS);
 		
-		// --------------------------------------------------------------
-		
-		
-		
-		
-		//this.getChildren().addAll(buttons_1, hbox_buttons_1);
-		
-		
-		
-	
 	}
 
 }
-
-
-
 
 

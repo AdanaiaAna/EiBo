@@ -105,8 +105,8 @@ public class DjViewController extends ViewController {
 	@Override
 	public void initialize() {
 		
-		
 		// -------Drum Event Handlers--------
+		
 		drum_1.setOnAction(event -> {
 			if (!sound.getAudioPlayerIsPlaying(TRACK1, "Drum")) {
 				sound.playLoop(TRACK1, "Drum");
@@ -138,7 +138,10 @@ public class DjViewController extends ViewController {
 				sound.endLoop(TRACK4, "Drum");
 			}
 		});
+		
+		
 		//------- ExtraDrum Eventhandler------
+		
 		drum_extra_1.setOnAction(event -> {
 			if (!sound.getAudioPlayerIsPlaying(TRACK1, "ExtraDrum")) {
 				sound.playLoop(TRACK1, "ExtraDrum");
@@ -157,6 +160,7 @@ public class DjViewController extends ViewController {
 		
 		
 		// -------Gitarren EventHandler--------
+		
 		guitar_1_1.setOnAction(event -> {
 			if (!sound.getAudioPlayerIsPlaying(TRACK1, "Guitar1")) {
 				sound.playLoop(TRACK1, "Guitar1");
@@ -221,6 +225,9 @@ public class DjViewController extends ViewController {
 			}
 		});
 		
+		
+		// -------Bass EventHandler--------
+		
 		bass_1.setOnAction(event -> {
 			if (!sound.getAudioPlayerIsPlaying(TRACK1, "Bass")) {
 				sound.playLoop(TRACK1, "Bass");
@@ -275,7 +282,6 @@ public class DjViewController extends ViewController {
 		
 		
 		
-		
 		// Zählt die Zeit hoch wenn man recordet
 		sound.getTimeProperty().addListener(new ChangeListener<Number>() {
 
@@ -304,9 +310,9 @@ public class DjViewController extends ViewController {
 			}
 		});
 		
-		//Property f�r �nderungen am Volume Slider
+		//Property fuer �nderungen am Volume Slider
 				volumeSlider.valueProperty().addListener(new ChangeListener<Number>() {
-					//�ndert das Volume des Players mit dem neuen Wert des Sliders
+					//Ändert das Volume des Players mit dem neuen Wert des Sliders
 					public void changed(ObservableValue<? extends Number> oV, Number oldValue, Number newValue) {
 						sound.setVolume(newValue.floatValue());
 					}
