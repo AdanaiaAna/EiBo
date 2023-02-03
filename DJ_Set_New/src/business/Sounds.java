@@ -32,11 +32,6 @@ public class Sounds {
 	
 	private HashMap<String, List<SimpleAudioPlayer>> soundMap = new HashMap<>();
 
-	
-	//private List<SimpleAudioPlayer> soundlistLoops = new LinkedList<SimpleAudioPlayer>();
-	
-
-	
 	private int recordingnumber = 1;
 	private AudioInput in;
 	private AudioRecorder record;
@@ -122,27 +117,6 @@ public class Sounds {
 		}
 	}
 
-	/*public void playLoop(int sound, List<SimpleAudioPlayer> soundlistLoops) {
-		for (SimpleAudioPlayer currentAudio : soundlistLoops) {
-			if (currentAudio.isPlaying()) {
-				currentAudio.pause();
-				currentAudio.rewind();
-				break;
-			}
-		}
-		
-		if (sound < soundlistLoops.size() && sound >= 0) {
-			soundlistLoops.get(sound).loop();
-		}
-	}
-	
-
-	public void endLoop(int sound, List<SimpleAudioPlayer> soundlistLoops) {
-		if (sound < soundlistLoops.size() && sound >= 0) {
-			soundlistLoops.get(sound).pause();
-			soundlistLoops.get(sound).rewind();
-		}
-	}*/
 	
 	public void playOneShot(int sound) {
 		if (sound < osLoops.size() && sound >= 0) {
@@ -151,11 +125,6 @@ public class Sounds {
 		}
 	}
 	
-	/*
-	public boolean getAudioPlayerIsPlaying(int sound, List<SimpleAudioPlayer> soundlistLoops) {
-		return soundlistLoops.get(sound).isPlaying();
-	}
-	*/
 	
 	public boolean getAudioPlayerIsPlaying(int sound, String soundList) {
 		return soundMap.get(soundList).get(sound).isPlaying();
@@ -193,8 +162,6 @@ public class Sounds {
 		playTime.interrupt();
 		in.close();
 		out.close();
-		//habs auskommentiert sonst recorded es jedes mal haha
-		//record.save();
 	}
 	
 	
@@ -212,55 +179,8 @@ public class Sounds {
 					}
 		      }
 		   }
-		
-		/*for (SimpleAudioPlayer currentAudio : drumLoops) {
-			if (currentAudio.isPlaying()) {
-				currentAudio.pause();
-				currentAudio.rewind();
-				break;
-			}
-		}
-		
-		for (SimpleAudioPlayer currentAudio : guitar1Loops) {
-			if (currentAudio.isPlaying()) {
-				currentAudio.pause();
-				currentAudio.rewind();
-				break;
-			}
-		}
-		
-		for (SimpleAudioPlayer currentAudio : guitar2Loops) {
-			if (currentAudio.isPlaying()) {
-				currentAudio.pause();
-				currentAudio.rewind();
-				break;
-			}
-		}
-		
-		for (SimpleAudioPlayer currentAudio : bassLoops) {
-			if (currentAudio.isPlaying()) {
-				currentAudio.pause();
-				currentAudio.rewind();
-				break;
-			}
-		}
-		for (SimpleAudioPlayer currentAudio : extraDrumLoops) {
-			if (currentAudio.isPlaying()) {
-				currentAudio.pause();
-				currentAudio.rewind();
-				break;
-			}
-		}
-		
-		for (SimpleAudioPlayer currentAudio : osLoops) {
-			if (currentAudio.isPlaying()) {
-				currentAudio.pause();
-				currentAudio.rewind();
-				break;
-			}
-		}*/
-		
 	}
+	
 	
 	public void setVolume(float normalVolume) {
 		//normal volume to db
@@ -277,7 +197,6 @@ public class Sounds {
 					}
 		      }
 		   }
-		
 	}
 	
 	
@@ -289,21 +208,4 @@ public class Sounds {
 		return time;
 	}
 	
-	/*
-	public List<SimpleAudioPlayer> getDrumLoops(){
-		return drumLoops;
-	}
-	
-	public List<SimpleAudioPlayer> getGuitar1Loops(){
-		return guitar1Loops;
-	}
-	public List<SimpleAudioPlayer> getGuitar2Loops(){
-		return guitar2Loops;
-	}
-	public List<SimpleAudioPlayer> getBassLoops(){
-		return bassLoops;
-	}
-	public List<SimpleAudioPlayer> getExtraDrumLoops(){
-		return extraDrumLoops;
-	}*/
 }
