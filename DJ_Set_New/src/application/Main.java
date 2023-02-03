@@ -31,32 +31,24 @@ import javafx.scene.layout.StackPane;
 
 public class Main extends Application {
 
-	Stage primaryStage;
-	StartView startView;
-	Pane DjView;
-	ViewController controller;
-	Button play;
-	Button yesButton;
-	Button noButton;
-	ToggleButton record_start;
+	public Stage primaryStage;
+	public StartView startView;
+	public Pane DjView;
+	public ViewController controller;
+	public Button play;
+	public Button yesButton;
+	public Button noButton;
+	public ToggleButton record_start;
 	public HashMap<String, Pane> scenes;
-	Pane root;
-	Scene scene;
-	Sounds sound;
-	AlertPane alertPane;
+	public Pane root;
+	public Scene scene;
+	public Sounds sound;
+	public AlertPane alertPane;
 
 	@Override
 	public void start(Stage primaryStage) {
-		/*
-		 * controller = new DjViewController(); DjView = new DjView(); startView = new
-		 * StartView();
-		 * 
-		 * play = startView.getPlayButton();
-		 */
 
 		try {
-
-			
 			initialize();
 			root = scenes.get("StartView");
 			scene = new Scene(root, 1300, 900);
@@ -126,6 +118,7 @@ public class Main extends Application {
 				anim.playFromStart();
 			}
 		});
+		
 		yesButton.addEventHandler(ActionEvent.ACTION, new EventHandler<ActionEvent>() {
 
 			@Override
