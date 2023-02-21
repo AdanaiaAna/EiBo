@@ -30,6 +30,7 @@ public class Sounds {
 	//Oneshots 
 	private List<SimpleAudioPlayer> osLoops = new LinkedList<SimpleAudioPlayer>();
 	
+	//Alle Sounds
 	private HashMap<String, List<SimpleAudioPlayer>> soundMap = new HashMap<>();
 
 	private int recordingnumber = 1;
